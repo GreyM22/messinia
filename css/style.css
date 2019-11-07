@@ -1,0 +1,142 @@
+body {
+  font-family: "Playfair Display", serif;
+}
+
+/* header section*/
+header {
+  background-image: url("../images/header-view.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: transparent !important;
+  color: #487ae5 !important;
+  border: 1px solid #007aff;
+  height: 46px;
+  width: 161px;
+}
+
+header a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 24px;
+}
+
+header a:hover {
+  color: #487ae5 !important;
+}
+
+a.navbar-brand {
+  font-size: 18px;
+  letter-spacing: 2.4px;
+  line-height: 23px;
+}
+
+a.navbar-brand:hover {
+  color: white !important;
+}
+
+a.navbar-brand::before {
+  content: url(../images/logo.svg);
+  display: block;
+  margin-right: 10px;
+}
+
+header .sms {
+  opacity: 0.6;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  line-height: 14px;
+  display: block;
+  height: 14px;
+  width: 328px;
+
+  position: absolute;
+  left: -146px;
+  top: 50%;
+  transform: rotate(-90deg);
+}
+
+.scoial-net {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  transform: rotate(-90deg);
+  opacity: 0.6;
+}
+.scoial-net li:first-child a.nav-link::after {
+  content: url(../images/instagram-icon.svg);
+}
+
+.scoial-net li:first-child + li a.nav-link::after {
+  content: url(../images/facebook-icon.svg);
+}
+
+.scoial-net li:last-child a.nav-link::after {
+  content: url(../images/twitter-icon.svg);
+}
+/* end of header section */
+
+/* section below header*/
+section.down-header {
+  background-color: #f8f4f1;
+}
+
+section.down-header .content {
+  max-width: 524px;
+  padding-top: 19.33vh;
+  padding-bottom: 21.71vh;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+  color: #007aff;
+}
+
+/* end of section below header*/
+
+/* description section*/
+
+.description h2 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 44px;
+  max-width: 441px;
+}
+
+.description h2.right::before {
+  content: url(../images/quots.svg);
+  display: block;
+  margin-bottom: 32px;
+}
+
+.content-description {
+  max-width: 392px;
+  color: #8e8e93;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+
+.description .row + .row{
+    padding-top: 32.78vh;
+    padding-bottom: 20.23vh;
+}
+
+.description .row + .row img{
+    top:-12vh;
+    right: 3vw;
+    margin-right: 20;
+}
+/* end of description section*/
