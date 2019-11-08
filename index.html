@@ -15,10 +15,10 @@
 <body>
     <header class=" w-100 min-vh-100 text-white position-relative">
         <div class="container">
-            <nav class="navbar pt-5 mx-5">
+            <nav class="navbar d-flex justify-content-between pt-5 mx-lg-5">
                 <a href="#"
-                    class="navbar-brand w-auto h-auto d-flex justify-content-center align-items-center">MESSINIA</a>
-                <ul class="nav nav-pills justify-content-end ">
+                    class="navbar-brand w-auto h-auto d-flex justify-content-center align-items-center p-0">MESSINIA</a>
+                <ul class="nav nav-pills d-flex justify-content-center align-items-center">
                     <li class="nav-item d-flex justify-content-center align-items-center">
                         <a href="#" class="nav-link  "> About</a>
                     </li>
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="sms text-right">
+        <div class="sms text-right w-auto">
             OPEN TODAY UNTIL 10:00 PM
         </div>
         <ul class="nav nav-pills scoial-net">
@@ -56,11 +56,11 @@
             Fusce in condimentum diam morbi in iaculis erat tiam fermentum rhoncus sollicitudin. </div>
     </section>
 
-    <section class="description">
+    <section class="description bg-white">
         <div class="container">
-            <div class="row h-auto pt-5 mt-5 justify-content-md-center">
+            <div class="row h-auto justify-content-md-center">
                 <div class="col-12   col-md-auto img-left  pr-md-4">
-                    <img src="images/shrimps.jpg" class=" h-auto float-right" alt="shrimps">
+                    <img src="images/shrimps.jpg" class=" h-auto md-float-right" alt="shrimps">
                 </div>
                 <div class="col-12  col-md-5 p-0 pl-md-4  ">
                     <h2 class=" quots text-center h-auto">
@@ -94,7 +94,7 @@
         </div>
     </section>
 
-    <section class="social-net bg-primary-color w-100">
+    <section class="social-net-feed bg-primary-color w-100">
         <h2>
             Follow us on <a href="#" class="stretched-link">Instagram</a>
         </h2>
@@ -122,28 +122,26 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="w-100 position-fixed">
         <h2>
             Reserve your <span>Experience</span>
         </h2>
 
-        <form action="" class="ml-auto mr-auto">
+        <form action="" class="ml-auto mr-auto px-2">
             <div class="form-group">
                 <label for="guest">no. of guest</label>
                 <input type="number" class="form-control" id="guest" value="2" min="2" required>
             </div>
-            <div class="form-row m-0 mt-1 w-100 d-flex justify-content-between ">
-                    <div class="form-group col-md-6 p-0 pr-3">
-                            <label for="time"
-                            class="">time</label>
-                        <input type="text" class="form-control " id="time" placeholder="hh:mm"
-                            minlength="7" maxlength="7" required name="time">
-                    </div>    
-                <div class="form-group col-md-6 p-0 pl-1">
-                        <label for="date"
-                        class="">date</label>
-                    <input type="text" class="form-control " id="date" placeholder="MM:DD"
-                        required autocomplete="off" minlength="7" maxlength="7" name="date">
+            <div class="form-row m-0 mt-1  w-100 d-flex justify-content-between ">
+                <div class="form-group col-sm-6 p-0 pr-sm-3">
+                    <label for="time" class="">time</label>
+                    <input type="text" class="form-control " id="time" placeholder="hh:mm" minlength="7" maxlength="7"
+                        required name="time">
+                </div>
+                <div class="form-group col-sm-6 p-0 pl-sm-1">
+                    <label for="date" class="">date</label>
+                    <input type="text" class="form-control " id="date" placeholder="MM:DD" required autocomplete="off"
+                        minlength="7" maxlength="7" name="date">
                 </div>
             </div>
             <div class="form-group mt-1">
@@ -156,6 +154,29 @@
             </div>
             <button type="submit" class="btn btn-primary w-100 mt-5">RESERVE A TABLE</button>
         </form>
+        <a href="#" class="logo-button"></a>
+
+        <ul class="nav nav-pills scoial-net d-flex justify-content-center align-items-center">
+            <li class="nav-item">
+                <a href="#" class="nav-link py-0 px-2  "> </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link py-0 px-2 "></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link py-0 px-2"></a>
+            </li>
+        </ul>
+
+        <div class="info text-center mx-auto">
+                109 Danfirth Avenue, Toronto ON - (416) 982-2901  
+        </div>
+
+        <div class="term-privacy text-center mx-auto">
+                Terms and Privacy and other goodies usually goes in here. Site by <a href="#">Bonfork</a>
+        </div>
+
+        <div class="separator text-center "></div>
 
     </footer>
     <!-- jquery framework-->
