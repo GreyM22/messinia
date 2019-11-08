@@ -147,8 +147,8 @@ section.down-header .content {
 }
 
 .description .row + .row {
-  padding-top: 32.78vh;
-  padding-bottom: 19.64vh;
+  padding-top: 22.01vw;
+  padding-bottom: 18.95vw;
 }
 
 .description .row + .row img {
@@ -158,6 +158,11 @@ section.down-header .content {
   max-width: 543px;
   bottom: -94px;
 }
+
+/* .description .col-md-5{
+  flex: 0 0 41.666667%;
+  max-width: 54.666667%;
+} */
 
 /* end of description section*/
 
