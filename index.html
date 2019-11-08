@@ -51,22 +51,22 @@
             </li>
         </ul>
     </header>
-    <section class="down-header w-100 h-auto">
+    <section class="down-header w-100 h-auto bg-primary-color">
         <div class="content h-auto mx-auto text-center">
             Fusce in condimentum diam morbi in iaculis erat tiam fermentum rhoncus sollicitudin. </div>
     </section>
 
     <section class="description">
         <div class="container">
-            <div class="row h-auto pt-5 mt-5">
-                <div class="col-md-6 order-md-1 order-2 ">
-                    <img src="images/shrimps.jpg" class="min-vh-90 w-auto" alt="shrimps">
+            <div class="row h-auto pt-5 mt-5 justify-content-md-center">
+                <div class="col-12   col-md-auto img-left  pr-md-4">
+                    <img src="images/shrimps.jpg" class=" h-auto float-right" alt="shrimps">
                 </div>
-                <div class="col-md-6 order-md-2 order-1 pl-md-5  ">
-                    <h2 class="  text-center h-auto">
+                <div class="col-12  col-md-5 p-0 pl-md-4  ">
+                    <h2 class=" quots text-center h-auto">
                         Mauris maximus urna ac justo laoreet, sed condimentum metus lacinia.
                     </h2>
-                    <div class="content-description text-left pl-4 pt-5">
+                    <div class="content-description text-left  pl-3 pt-5">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
                         of type and scrambled it to make a type specimen book.
@@ -80,19 +80,84 @@
                     </div>
                 </div>
             </div>
-            <div class="row h-auto position-relative">
-                <div class="col-md-6 order-md-1 order-2">
+            <div class="row h-auto ">
+                <div class="col-md-6 order-md-1 order-2  pr-5 -auto pr-xl-auto">
                     <h2 class=" pl-md-5 ml-md-1 text-center">
-                            Morbi congue augue id velit pellentesque finibus enean pharetra est dui, sit amet scelerisque ipsum aliquam quis.
+                        Morbi congue augue id velit pellentesque finibus enean pharetra est dui, sit amet scelerisque
+                        ipsum aliquam quis.
                     </h2>
                 </div>
-                <div class="col-md-6 order-md-2 order-1 position-static">
-                    <img src="images/osters.jpg" alt="osters" class=" min-vh-84 w-auto position-absolute zindex-modal">
+                <div class="col-md-6 order-md-2 order-1 position-relative  w-auto pl-5 pl-xl-auto">
+                    <img src="images/osters.jpg" alt="osters" class=" h-auto position-absolute">
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="social-net bg-primary-color w-100">
+        <h2>
+            Follow us on <a href="#" class="stretched-link">Instagram</a>
+        </h2>
+        <div class="row justify-content-end w-100 no-gutters">
+            <div class="col-4 d-flex align-items-end">
+                <img src="images/meat-dish.jpg" alt="meat-dish" class="h-auto w-100">
+            </div>
+            <div class="col-3">
+                <img src="images/view-from-above.jpg" alt="view-from-above" class="h-auto w-100">
+            </div>
+            <div class="col-4 d-flex align-items-end">
+                <img src="images/glass-of-wine.jpg" alt="glass-of-wine" class="w-100 h-auto">
+            </div>
+        </div>
+        <div class="row justify-content-start w-100 no-gutters mt-0">
+            <div class="col-3">
+                <img src="images/mint.jpg" alt="mint" class="w-100 h-auto">
+            </div>
+            <div class="col-2">
+                <img src="images/chief.jpg" alt="chief" class="w-100 h-auto">
+            </div>
+            <div class="col-3">
+                <img src="images/table-whith-out-people.jpg" alt="table-whith-out-people" class="w-100 h-auto">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>
+            Reserve your <span>Experience</span>
+        </h2>
+
+        <form action="" class="ml-auto mr-auto">
+            <div class="form-group">
+                <label for="guest">no. of guest</label>
+                <input type="number" class="form-control" id="guest" value="2" min="2" required>
+            </div>
+            <div class="form-row m-0 mt-1 w-100 d-flex justify-content-between ">
+                    <div class="form-group col-md-6 p-0 pr-3">
+                            <label for="time"
+                            class="">time</label>
+                        <input type="text" class="form-control " id="time" placeholder="hh:mm"
+                            minlength="7" maxlength="7" required name="time">
+                    </div>    
+                <div class="form-group col-md-6 p-0 pl-1">
+                        <label for="date"
+                        class="">date</label>
+                    <input type="text" class="form-control " id="date" placeholder="MM:DD"
+                        required autocomplete="off" minlength="7" maxlength="7" name="date">
+                </div>
+            </div>
+            <div class="form-group mt-1">
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group mt-1 mb-0">
+                <label for="email">email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-5">RESERVE A TABLE</button>
+        </form>
+
+    </footer>
     <!-- jquery framework-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- bootstrap js-->
