@@ -30,6 +30,34 @@ header {
   background-size: cover;
 }
 
+.menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-bar {
+  transform: rotate(0);
+}
+.top-bar {
+  transform: rotate(0);
+}
+
+.clicked.bottom-bar{
+  width: 0;
+}
+.navbar-toggler-bar {
+  background: white;
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 2px;
+  margin: 7px;
+  border-radius: 1px;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   background-color: transparent !important;
@@ -105,6 +133,53 @@ header .scoial-net {
 .scoial-net li:last-child a.nav-link::after {
   content: url(../images/twitter-icon.svg);
 }
+
+.navbar-collapse {
+  z-index: 20;
+  top: 0;
+  right: 0;
+  background-color: #007aff;
+  padding-top: 20.57vh;
+
+}
+
+.navbar-collapse .bg-img {
+  bottom: 0;
+  right: -39vh;
+  width: 82.15vh;
+  height: 82.15vh;
+  background-image: url("../images/logo-toggle-nav-bar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 20;
+}
+.navbar-collapse ul {
+  padding-left: 18.12vw;
+}
+
+.navbar-collapse ul a {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.navbar-collapse .logo-button {
+  margin-top: 24.49vh;
+}
+.navbar-collapse .logo-button::after {
+  content: url(../images/logo-toggle-nav-bar.svg);
+}
+
+.navbar-collapse .scoial-net {
+  margin-top: 4.66vh;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.navbar-collapse .info {
+  padding-top: 2.41vh;
+  
+}
 /* end of header section */
 
 /* section below header*/
@@ -152,17 +227,13 @@ section.down-header .content {
 }
 
 .description .row + .row img {
+  position: absolute;
   margin-top: -47.67vh;
   margin-left: -50px;
   width: 37.7vw;
   max-width: 543px;
   bottom: -94px;
 }
-
-/* .description .col-md-5{
-  flex: 0 0 41.666667%;
-  max-width: 54.666667%;
-} */
 
 /* end of description section*/
 
@@ -322,6 +393,10 @@ footer .info {
   margin-top: 5.27vh;
 }
 
+footer .info a {
+  color: #5e5e64;
+}
+
 footer .term-privacy {
   max-width: 632px;
   color: #8e8e93;
@@ -347,9 +422,21 @@ footer .term-privacy {
 
 /*****************************************************/
 
-/* @media only screen and (max-width: 991px) {
-  .description .img-left img{
-    width: 100%;
-    height: auto;
+@media only screen and (max-width: 991px) {
+  /* description section */
+  .description .row + .row img {
+    position: static;
+    margin: 0;
+    width: 39.93vw;
   }
-} */
+  .description .row + .row {
+    padding-top: 0;
+  }
+}
+
+/****************************************************/
+@media only screen and (max-width: 569px) {
+  footer form {
+    width: 91.22vw;
+  }
+}

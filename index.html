@@ -2,6 +2,9 @@
 
 <head>
     <title>MESSINIA</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <!-- face fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Red+Hat+Display:400,500,700&display=swap"
@@ -15,10 +18,10 @@
 <body>
     <header class=" w-100 min-vh-100 text-white position-relative">
         <div class="container">
-            <nav class="navbar d-flex justify-content-between pt-5 mx-lg-5">
+            <nav class="navbar d-flex justify-content-between  pt-5 mx-lg-5">
                 <a href="#"
                     class="navbar-brand w-auto h-auto d-flex justify-content-center align-items-center p-0">MESSINIA</a>
-                <ul class="nav nav-pills d-flex justify-content-center align-items-center">
+                <ul class="  nav nav-pills d-none d-md-flex  justify-content-center align-items-center ">
                     <li class="nav-item d-flex justify-content-center align-items-center">
                         <a href="#" class="nav-link  "> About</a>
                     </li>
@@ -34,6 +37,50 @@
                             table</a>
                     </li>
                 </ul>
+                <button class="menu-icon d-flex justify-content-center align-items-center d-md-none"  id="menu-button">
+                    <a href="#">
+                        <span class="navbar-toggler-bar top-bar "></span>
+                        <span class="navbar-toggler-bar bottom-bar "></span>
+                    </a>
+                </button>
+                <div class="navbar-collapse min-vh-100 vw-100 position-fixed d-none">
+                    <div class="bg-img position-absolute">
+
+                    </div>
+                    <ul >
+                        <li class="nav-item d-flex justify-content-start align-items-center ">
+                            <a href="#" class="nav-link  "> About</a>
+                        </li>
+                        <li class="nav-item d-flex justify-content-start align-items-center ">
+                            <a href="#" class="nav-link">menu</a>
+                        </li>
+                        <li class="nav-item d-flex justify-content-start align-items-center ">
+                            <a href="#" class="nav-link">gallery</a>
+                        </li>
+                        <li class="nav-item d-flex justify-content-start align-items-center ">
+                            <a href="#"
+                                class="nav-link">RESERVATIONS</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="logo-button"></a>
+                    <ul class="nav nav-pills scoial-net d-flex justify-content-center align-items-center p-0 position-static">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link py-0 px-3  "> </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link py-0 px-3 "></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link py-0 px-3"></a>
+                            </li>
+                        </ul>
+                
+                        <div class="info text-center mx-auto px-1 mb-5">
+                            109 Danfirth Avenue, Toronto ON - <a href="tel:+4169822901">(416) 982-2901</a>
+                        </div>
+                
+                </div>
             </nav>
         </div>
         <div class="sms text-right w-auto">
@@ -62,11 +109,11 @@
                 <div class="col-12 d-flex justify-content-center justify-content-lg-end col-lg-auto img-left  pr-lg-4">
                     <img src="images/shrimps.jpg" class=" h-auto " alt="shrimps">
                 </div>
-                <div class="col-12  col-lg-5 p-0 pl-lg-4 justify-content-center justify-content-lg-start mt-md-5 ">
-                    <h2 class=" quots text-center h-auto mx-md-auto">
+                <div class="col-12  col-lg-5 p-0 pl-lg-4 justify-content-center justify-content-lg-start mt-lg-0 mt-5 ">
+                    <h2 class=" quots text-center h-auto mx-auto ml-lg-0  px-2 px-lg-0">
                         Mauris maximus urna ac justo laoreet, sed condimentum metus lacinia.
                     </h2>
-                    <div class="content-description text-left mx-md-auto pl-lg-3 pt-5 ">
+                    <div class="content-description text-left mx-auto pl-lg-3 pt-5 px-3 px-lg-0">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
                         of type and scrambled it to make a type specimen book.
@@ -80,22 +127,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row h-auto ">
-                <div class="col-md-6 order-md-1 order-2  pr-5 -auto pr-xl-auto">
-                    <h2 class=" pl-md-5 ml-md-1 text-center">
+            <div class="row h-auto mt-lg-0 mt-5">
+                <div class="col-12 col-lg-6 order-lg-1 order-2  mt-lg-0 mt-5">
+                    <h2 class=" pl-lg-5 ml-lg-1 ml-lg-0 mx-auto text-center px-2 px-lg-0">
                         Morbi congue augue id velit pellentesque finibus enean pharetra est dui, sit amet scelerisque
                         ipsum aliquam quis.
                     </h2>
                 </div>
-                <div class="col-md-6 order-md-2 order-1 position-relative  w-auto pl-5 pl-xl-auto">
-                    <img src="images/osters.jpg" alt="osters" class=" h-auto position-absolute">
+                <div
+                    class="col-12 col-lg-6 order-lg-2 order-1 position-relative  w-auto pl-lg-5 pl-xl-auto d-flex justify-content-center p-0 ">
+                    <img src="images/osters.jpg" alt="osters" class=" h-auto ">
                 </div>
             </div>
         </div>
     </section>
 
     <section class="social-net-feed bg-primary-color w-100">
-        <h2>
+        <h2 class="text-center">
             Follow us on <a href="#" class="stretched-link">Instagram</a>
         </h2>
         <div class="row justify-content-end w-100 no-gutters">
@@ -123,7 +171,7 @@
     </section>
 
     <footer class="w-100 position-fixed">
-        <h2>
+        <h2 class="text-center">
             Reserve your <span>Experience</span>
         </h2>
 
@@ -169,18 +217,18 @@
         </ul>
 
         <div class="info text-center mx-auto">
-                109 Danfirth Avenue, Toronto ON - (416) 982-2901  
+            109 Danfirth Avenue, Toronto ON - <a href="tel:+4169822901">(416) 982-2901</a>
         </div>
 
-        <div class="term-privacy text-center mx-auto">
-                Terms and Privacy and other goodies usually goes in here. Site by <a href="#">Bonfork</a>
+        <div class="term-privacy text-center mx-auto px-2">
+            Terms and Privacy and other goodies usually goes in here. Site by <a href="#">Bonfork</a>
         </div>
 
         <div class="separator text-center "></div>
 
     </footer>
     <!-- jquery framework-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    
     <!-- bootstrap js-->
     <script src="js/bootstrap.min.js"></script>
     <!-- main js file -->
