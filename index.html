@@ -18,7 +18,7 @@
 <body>
     <header class=" w-100 min-vh-100 text-white position-relative">
         <div class="container">
-            <nav class="navbar d-flex justify-content-between  pt-5 mx-lg-5">
+            <nav class="navbar d-flex justify-content-between pt-3 pt-md-5 mx-lg-5">
                 <a href="#"
                     class="navbar-brand w-auto h-auto d-flex justify-content-center align-items-center p-0">MESSINIA</a>
                 <ul class="  nav nav-pills d-none d-md-flex  justify-content-center align-items-center ">
@@ -37,28 +37,33 @@
                             table</a>
                     </li>
                 </ul>
-                <button class="menu-icon d-flex justify-content-center align-items-center d-md-none"  id="menu-button">
-                    <a href="#">
-                        <span class="navbar-toggler-bar top-bar "></span>
-                        <span class="navbar-toggler-bar bottom-bar "></span>
+                <div class="menu-icon d-flex justify-content-center align-items-center d-md-none position-relative">
+                    <a href="#" class="d-visible">
+                        <span class="navbar-toggler-bar top-bar mx-0 position-relative"></span>
+                        <span class="navbar-toggler-bar bottom-bar mx-0 position-relative"></span>
                     </a>
-                </button>
-                <div class="navbar-collapse min-vh-100 vw-100 position-fixed d-none">
+                    <a href="#" class="d-none">
+                        <span class="navbar-toggler-bar top-close mx-0 position-relative"></span>
+                        <span class="navbar-toggler-bar middle-close mx-0 position-relative"></span>
+                        <span class="navbar-toggler-bar bottom-close mx-0 position-relative"></span>
+                    </a>
+                </div>
+                <div class="navbar-collapse min-vh-100 position-fixed ">
                     <div class="bg-img position-absolute">
 
                     </div>
                     <ul >
                         <li class="nav-item d-flex justify-content-start align-items-center ">
-                            <a href="#" class="nav-link  "> About</a>
+                            <a href="#" class="nav-link  " id="firstLink"> About</a>
                         </li>
                         <li class="nav-item d-flex justify-content-start align-items-center ">
-                            <a href="#" class="nav-link">menu</a>
+                            <a href="#" class="nav-link" id="secondLink">menu</a>
                         </li>
                         <li class="nav-item d-flex justify-content-start align-items-center ">
-                            <a href="#" class="nav-link">gallery</a>
+                            <a href="#" class="nav-link" id="thirdLink">gallery</a>
                         </li>
                         <li class="nav-item d-flex justify-content-start align-items-center ">
-                            <a href="#"
+                            <a href="#" id="forthLink"
                                 class="nav-link">RESERVATIONS</a>
                         </li>
                     </ul>
@@ -144,7 +149,7 @@
 
     <section class="social-net-feed bg-primary-color w-100">
         <h2 class="text-center">
-            Follow us on <a href="#" class="stretched-link">Instagram</a>
+            Follow us on <a href="#" >Instagram</a>
         </h2>
         <div class="row justify-content-end w-100 no-gutters">
             <div class="col-4 d-flex align-items-end">
@@ -228,7 +233,8 @@
 
     </footer>
     <!-- jquery framework-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>   
     <!-- bootstrap js-->
     <script src="js/bootstrap.min.js"></script>
     <!-- main js file -->

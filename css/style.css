@@ -34,17 +34,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.bottom-bar {
-  transform: rotate(0);
-}
-.top-bar {
-  transform: rotate(0);
+  overflow: hidden;
 }
 
-.clicked.bottom-bar{
-  width: 0;
-}
 .navbar-toggler-bar {
   background: white;
   display: block;
@@ -53,9 +45,53 @@ header {
   height: 2px;
   margin: 7px;
   border-radius: 1px;
+  position: relative;
   -webkit-transition: all 0.6s;
   -moz-transition: all 0.6s;
   transition: all 0.6s;
+}
+
+
+.clicked.bottom-bar {
+  transform: translatex(+150%);
+}
+.clicked.top-bar {
+  transform: translatex(+150%);
+}
+
+.bottom-bar {
+  transform: translatex(0);
+  z-index: 21;
+}
+.top-bar {
+  transform: rotate(0);
+  z-index: 21;
+}
+
+.top-close {
+  transform: rotate(45deg);
+  transform-origin: 0;
+  width: 0;
+  z-index: 21;
+}
+.middle-close {
+  opacity: 0;
+  display: block;
+  z-index: 21;
+}
+.bottom-close {
+  width: 0;
+  transform: rotate(-45deg);
+  transform-origin: 0;
+  z-index: 21;
+}
+
+.clicked.top-close{
+  width: 25px;
+}
+
+.clicked.bottom-close{
+  width: 25px;
 }
 
 .nav-pills .nav-link.active,
@@ -135,12 +171,22 @@ header .scoial-net {
 }
 
 .navbar-collapse {
+  width: 1px;
+  opacity: 0;
   z-index: 20;
   top: 0;
   right: 0;
   background-color: #007aff;
   padding-top: 20.57vh;
+    -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
 
+}
+
+.navbar-collapse.open{
+  width: 100vw;
+  opacity: 1;
 }
 
 .navbar-collapse .bg-img {
@@ -159,13 +205,34 @@ header .scoial-net {
 
 .navbar-collapse ul a {
   font-size: 16px;
-  font-weight: 500;
   letter-spacing: 2px;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.navbar-collapse ul a.slide{
+  height: auto;
+  opacity: 1;
 }
 
 .navbar-collapse .logo-button {
+  height: 0;
+  opacity: 0;
   margin-top: 24.49vh;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
 }
+
+.navbar-collapse .logo-button.slide{
+  height:auto;
+  opacity: 1;
+}
+
 .navbar-collapse .logo-button::after {
   content: url(../images/logo-toggle-nav-bar.svg);
 }
@@ -178,7 +245,18 @@ header .scoial-net {
 
 .navbar-collapse .info {
   padding-top: 2.41vh;
-  
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.navbar-collapse .info.slide{
+  opacity: 1;
+  height: auto;
+  overflow: visible;
 }
 /* end of header section */
 
