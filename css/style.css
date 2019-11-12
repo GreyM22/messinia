@@ -371,10 +371,12 @@ footer {
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 
 footer::-webkit-scrollbar {
-  width: 0;
+  width: 0!important;
 }
 
 footer h2 span {

@@ -36,7 +36,7 @@ $(document).ready(function () {
     /**************************************************/
 
     // Animation for the toggle navigation bar
-    $(".menu-icon, a.nav-link").on("click", function () {
+    $(".menu-icon, .navbar-collapse a.nav-link").on("click", function () {
 
         let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
         let buttonId = $(this).attr('id');
