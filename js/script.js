@@ -169,6 +169,8 @@ $(document).ready(function () {
         request.open(formEmail.method, formEmail.action);
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send(getFormDataString(formEmail));
+        $('footer form ').trigger("reset");
+        $("footer").animate({ scrollTop: 0 }, "slow");
     });
 });
 
