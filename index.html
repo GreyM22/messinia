@@ -185,7 +185,7 @@
         <form  method="post" class="ml-auto mr-auto px-2" id="reservation-form">
             <div class="form-group">
                 <label for="guest">no. of guest</label>
-                <input type="number" class="form-control" id="guest" value="2" min="2" required>
+                <input type="number" class="form-control" id="guest" name="nr-guest" value="2" min="2" required>
             </div>
             <div class="form-row m-0 mt-1  w-100 d-flex justify-content-between ">
                 <div class="form-group col-sm-6 p-0 pr-sm-3">
@@ -201,11 +201,11 @@
             </div>
             <div class="form-group mt-1">
                 <label for="name">name</label>
-                <input type="text" class="form-control" id="name" required minlength="5">
+                <input type="text" class="form-control" id="name" name="name" required minlength="5">
             </div>
             <div class="form-group mt-1 mb-0">
                 <label for="email">email</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <input type="hidden" name="_subject" value="RESERVATIONS">
 
