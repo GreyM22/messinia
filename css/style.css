@@ -53,7 +53,6 @@ header {
   transition: all 0.3s;
 }
 
-
 .clicked.bottom-bar {
   transform: translatex(+150%);
 }
@@ -88,11 +87,11 @@ header {
   z-index: 21;
 }
 
-.clicked.top-close{
+.clicked.top-close {
   width: 25px;
 }
 
-.clicked.bottom-close{
+.clicked.bottom-close {
   width: 25px;
 }
 
@@ -180,12 +179,15 @@ header .scoial-net {
   right: 0;
   background-color: #007aff;
   padding-top: 20.57vh;
-    -webkit-transition: all 0.3s;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.navbar-collapse.open{
+.navbar-collapse.open {
   width: 100vw;
   opacity: 1;
 }
@@ -202,13 +204,13 @@ header .scoial-net {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   transition: all 0.1s;
-
 }
-.navbar-collapse .bg-img.open{
+.navbar-collapse .bg-img.open {
   width: 82.15vh;
 }
 .navbar-collapse ul {
   padding-left: 18.12vw;
+  z-index: 21;
 }
 
 .navbar-collapse ul a {
@@ -222,11 +224,11 @@ header .scoial-net {
   transition: all 0.3s;
 }
 
-.navbar-collapse a.nav-link{
-  color: white!important;
+.navbar-collapse a.nav-link {
+  color: white !important;
 }
 
-.navbar-collapse ul a.slide{
+.navbar-collapse ul a.slide {
   height: auto;
   opacity: 1;
 }
@@ -235,13 +237,14 @@ header .scoial-net {
   height: 0;
   opacity: 0;
   margin-top: 24.49vh;
+  z-index: 21;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.navbar-collapse .logo-button.slide{
-  height:auto;
+.navbar-collapse .logo-button.slide {
+  height: auto;
   opacity: 1;
 }
 
@@ -252,6 +255,7 @@ header .scoial-net {
 .navbar-collapse .scoial-net {
   margin-top: 4.66vh;
   opacity: 1;
+  top:0;
   transform: rotate(0);
 }
 
@@ -260,12 +264,13 @@ header .scoial-net {
   opacity: 0;
   height: 0;
   overflow: hidden;
+  z-index: 21;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.navbar-collapse .info.slide{
+.navbar-collapse .info.slide {
   opacity: 1;
   height: auto;
   overflow: visible;
@@ -375,7 +380,7 @@ footer {
 }
 
 footer::-webkit-scrollbar {
-  width: 0!important;
+  width: 0 !important;
 }
 
 footer h2 span {
@@ -433,7 +438,7 @@ footer form .form-control:focus {
   border-color: #ced4da;
 }
 
-footer form input[type=submit] {
+footer form input[type="submit"] {
   height: 67px;
   border-radius: 0 !important;
   background-color: #000000 !important;
@@ -443,7 +448,7 @@ footer form input[type=submit] {
   letter-spacing: 2.28px !important;
 }
 
-footer form input[type=submit]:hover {
+footer form input[type="submit"]:hover {
   background-color: white !important;
   color: black !important;
   border-color: black !important;
@@ -477,7 +482,8 @@ footer .scoial-net li:last-child a.nav-link::after {
   content: url(../images/twitter-icon-blue.svg);
 }
 
-footer .info, footer .sms-form {
+footer .info,
+footer .sms-form {
   color: #5e5e64;
   font-size: 16px;
   font-weight: 500;
@@ -486,8 +492,8 @@ footer .info, footer .sms-form {
   margin-top: 5.27vh;
 }
 
-footer .sms-form{
-  color:#0A7FFF;
+footer .sms-form {
+  color: #0a7fff;
 }
 
 footer .info a {
@@ -518,13 +524,13 @@ footer .term-privacy {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
 /* end of footer*/
 
