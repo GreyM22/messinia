@@ -157,14 +157,12 @@ $(document).ready(function () {
     // Override the submit event
     formEmail.addEventListener("submit", function (e) {
 
-        console.log("function called ok")
         e.preventDefault();
 
         let request = new XMLHttpRequest();
 
         request.addEventListener("load", function () {
             if (request.status === 302) { // CloudCannon redirects on success
-                console.log("worked")
             }
         });
 
