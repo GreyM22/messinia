@@ -13,33 +13,47 @@ $(document).ready(function () {
 
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function () {
+            if ($(this).attr('href') == '#reservation') {
+                $('html, body').animate({
+                    scrollTop: document.body.scrollHeight
+                }, 800, function () {
 
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } else {
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }
         } // End if
     });
 
     /**************************************************/
 
     // Animation for the toggle navigation bar
-    $(".menu-icon").on("click", function () {
+    $(".menu-icon, a.nav-link").on("click", function () {
 
+        let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
+        let buttonId = $(this).attr('id');
+        $('body').toggleClass('overflow-hidden');
+        if (jQuery.inArray(buttonId, arr) !== -1) { $('.navbar-collapse').toggleClass('open'); }
         if ($(".bottom-close").hasClass("clicked")) {
             $(".bottom-close").toggleClass("clicked");
             setTimeout(function () {
                 $(".top-close").toggleClass("clicked");
-            }, 250);
+            }, 125);
 
         }
         else {
             $(".bottom-bar").toggleClass("clicked");
             setTimeout(function () {
                 $(".top-bar").toggleClass("clicked");
-            }, 250);
+            }, 125);
         }
         setTimeout(function () {
             $(".menu-icon a:first-child").toggleClass("d-none");
@@ -47,7 +61,9 @@ $(document).ready(function () {
             $(".menu-icon a:last-child").toggleClass("d-none");
             $(".menu-icon a:last-child").toggleClass("d-visible");
             setTimeout(function () {
-                $('.navbar-collapse').toggleClass('open');
+                let id = $(this).attr('id');
+                let exp = jQuery.inArray($(this).attr('id'), arr);
+                if (jQuery.inArray(buttonId, arr) == -1) { $('.navbar-collapse').toggleClass('open'); }
                 $('.navbar-collapse .bg-img').toggleClass('open');
                 $(".menu-icon a.d-visible span:first-child").toggleClass("clicked");
                 setTimeout(function () {
@@ -59,23 +75,23 @@ $(document).ready(function () {
                             $('#thirdLink').toggleClass('slide');
                             setTimeout(function () {
                                 $('#forthLink').toggleClass('slide');
-                            }, 250);
+                            }, 125);
                             setTimeout(function () {
                                 $('.navbar-collapse .logo-button').toggleClass('slide');
-                            }, 250);
+                            }, 125);
                             setTimeout(function () {
                                 $('.logo-button + ul .nav-link').toggleClass('slide');
-                            }, 250);
+                            }, 125);
                             setTimeout(function () {
                                 $('.navbar-collapse .info').toggleClass('slide');
-                            }, 250);
-                        }, 250);
-                    }, 250);
+                            }, 125);
+                        }, 125);
+                    }, 125);
 
-                }, 250);
+                }, 125);
 
-            }, 250);
-        }, 600);
+            }, 125);
+        }, 300);
     });
 
     /************************************************************/
