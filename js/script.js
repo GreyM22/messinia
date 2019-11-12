@@ -189,8 +189,6 @@ formEmail.addEventListener("submit", function (e) {
     request.open(formEmail.method, formEmail.action);
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     request.send(getFormDataString(formEmail));
-    $('.sms-subscription').fadeToggle('fast');
-    $('#email-form').trigger("reset");
   });
   
   
