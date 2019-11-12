@@ -189,7 +189,6 @@ $(document).ready(function () {
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send(getFormDataString(formEmail));
     });
-
 });
 
 /* Fromating the date in the booking form  */
