@@ -134,7 +134,6 @@ $(document).ready(function () {
         });
 
             // Validation of the reservation form
-    $('footer form#reservation-form').submit(function () {
 
         let date = $("#date").val();
         let month = date.split("/")[0];
@@ -166,7 +165,6 @@ $(document).ready(function () {
             $("footer").animate({ scrollTop: 0 }, "slow");
         }
 
-    });
     });
 });
 
