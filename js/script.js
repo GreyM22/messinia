@@ -150,7 +150,9 @@ $(document).ready(function () {
         return data.join("&");
     }
 
-    var formEmail = document.getElementById("reservation-form");
+
+
+    var formEmail = document.getElementById("email-form");
 
     // Override the submit event
     formEmail.addEventListener("submit", function (e) {
