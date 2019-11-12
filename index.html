@@ -187,6 +187,10 @@
                 <input type="hidden" name="_subject" value="Reservation">
                 <label for="guest">no. of guest</label>
                 <input type="text" class="form-control" id="guest" name="guest" value="2"  required>
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name" name="client" required minlength="5">
+                <label for="email">email</label>
+                <input type="text" class="form-control" id="email" name="email" required>
             <div class="form-row m-0 mt-1  w-100 d-flex justify-content-between ">
                 <div class="form-group col-sm-6 p-0 pr-sm-3">
                     <label for="time" class="">time</label>
@@ -196,17 +200,9 @@
                 </div>
                 <div class="form-group col-sm-6 p-0 pl-sm-1">
                     <label for="date" class="">date</label>
-                    <input type="text" class="form-control " id="date" placeholder="MM:DD" required autocomplete="off"
+                    <input type="text" class="form-control " id="date" placeholder="MM/DD" required autocomplete="off"
                         minlength="7" maxlength="7" name="date">
                 </div>
-            </div>
-            <div class="form-group mt-1">
-                <label for="name">name</label>
-                <input type="text" class="form-control" id="name" name="client" required minlength="5">
-            </div>
-            <div class="form-group mt-1 mb-0">
-                <label for="email">email</label>
-                <input type="text" class="form-control" id="email" name="email" required>
             </div>
             <input type="submit" class="btn btn-primary w-100 mt-5" value="RESERVE A TABLE">
         </form>
