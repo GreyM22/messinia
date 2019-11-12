@@ -40,7 +40,6 @@ $(document).ready(function () {
 
         let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
         let buttonId = $(this).attr('id');
-        $('body').toggleClass('overflow-hidden');
         if (jQuery.inArray(buttonId, arr) !== -1) { $('.navbar-collapse').toggleClass('open'); }
         if ($(".bottom-close").hasClass("clicked")) {
             $(".bottom-close").toggleClass("clicked");
