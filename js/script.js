@@ -156,6 +156,7 @@ $(document).ready(function () {
             request.send(getFormDataString(formEmail));
             $('footer .sms-form').text('Reservation made successfully')
             $(' footer form').trigger("reset");
+            $("footer").animate({ scrollTop: 0 }, "slow");        
         }
         else if (parseInt(month) == parseInt(currentDate.getMonth()) && parseInt(day) >= parseInt(currentDate.getDate())) {
             if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
