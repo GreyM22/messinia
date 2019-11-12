@@ -150,26 +150,7 @@ $(document).ready(function () {
         return data.join("&");
     }
 
-    var formReservation = document.getElementById("reservation-form");
-
-    // Override the submit event
-    formReservation.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-
-        let request = new XMLHttpRequest();
-
-        request.addEventListener("load", function () {
-            if (request.status === 302) { // CloudCannon redirects on success
-            }
-        });
-
-        request.open(formReservation.method, formReservation.action);
-        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        request.send(getFormDataString(formReservation));
-    });
-
-    var formEmail = document.getElementById("email-form");
+    var formEmail = document.getElementById("reservation-form");
 
     // Override the submit event
     formEmail.addEventListener("submit", function (e) {
