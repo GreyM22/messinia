@@ -40,6 +40,7 @@ $(document).ready(function () {
 
         let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
         let buttonId = $(this).attr('id');
+        $('header').toggleClass('position-fixed');
         if (jQuery.inArray(buttonId, arr) !== -1) { $('.navbar-collapse').toggleClass('open'); }
         if ($(".bottom-close").hasClass("clicked")) {
             $(".bottom-close").toggleClass("clicked");
