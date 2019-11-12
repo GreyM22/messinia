@@ -192,12 +192,19 @@ header .scoial-net {
 .navbar-collapse .bg-img {
   bottom: 0;
   right: -39vh;
-  width: 82.15vh;
+  width: 0;
   height: 82.15vh;
   background-image: url("../images/logo-toggle-nav-bar.png");
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 20;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+
+}
+.navbar-collapse .bg-img.open{
+  width: 82.15vh;
 }
 .navbar-collapse ul {
   padding-left: 18.12vw;
@@ -401,7 +408,7 @@ footer form #email {
   color: #000000;
   font-family: "Red Hat Display", sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 2.18px;
   line-height: 24px;
   height: 60px;
@@ -418,7 +425,7 @@ footer form .form-control:focus {
   border-color: #ced4da;
 }
 
-footer form button {
+footer form input[type=submit] {
   height: 67px;
   border-radius: 0 !important;
   background-color: #000000 !important;
@@ -428,7 +435,7 @@ footer form button {
   letter-spacing: 2.28px !important;
 }
 
-footer form button:hover {
+footer form input[type=submit]:hover {
   background-color: white !important;
   color: black !important;
   border-color: black !important;
@@ -462,13 +469,17 @@ footer .scoial-net li:last-child a.nav-link::after {
   content: url(../images/twitter-icon-blue.svg);
 }
 
-footer .info {
+footer .info, footer .sms-form {
   color: #5e5e64;
   font-size: 16px;
   font-weight: 500;
   line-height: 21px;
   max-width: 632px;
   margin-top: 5.27vh;
+}
+
+footer .sms-form{
+  color:#0A7FFF;
 }
 
 footer .info a {
@@ -495,6 +506,17 @@ footer .term-privacy {
 
 .separator::after {
   content: url(../images/separator.svg);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
 /* end of footer*/
 
