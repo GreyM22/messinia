@@ -177,6 +177,9 @@ header .scoial-net {
   z-index: 20;
   top: 0;
   right: 0;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
   background-color: #007aff;
   padding-top: 20.57vh;
     -webkit-transition: all 0.3s;
@@ -371,7 +374,6 @@ footer {
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
-  overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
 
