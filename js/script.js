@@ -124,6 +124,14 @@ $(document).ready(function () {
     // Override the submit event
     formEmail.addEventListener("submit", function (e) {
 
+        e.preventDefault();
+
+        let request = new XMLHttpRequest();
+
+        request.addEventListener("load", function () {
+            if (request.status === 302) { // CloudCannon redirects on success
+            }
+        });        
 
             // Validation of the reservation form
 
@@ -135,19 +143,22 @@ $(document).ready(function () {
         let currentDate = new Date();
 
         if (parseInt(month) > parseInt(currentDate.getMonth())) {
+            e.preventDefault();
+
+            let request = new XMLHttpRequest();
+    
+            request.addEventListener("load", function () {
+                if (request.status === 302) { // CloudCannon redirects on success
+                }
+            });        
+            request.open(formEmail.method, formEmail.action);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            request.send(getFormDataString(formEmail));
             $('footer .sms-form').text('Reservation made successfully')
             $(' footer form').trigger("reset");
         }
         else if (parseInt(month) == parseInt(currentDate.getMonth()) && parseInt(day) >= parseInt(currentDate.getDate())) {
             if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
-                e.preventDefault();
-
-                let request = new XMLHttpRequest();
-        
-                request.addEventListener("load", function () {
-                    if (request.status === 302) { // CloudCannon redirects on success
-                    }
-                });        
                 request.open(formEmail.method, formEmail.action);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.send(getFormDataString(formEmail));
