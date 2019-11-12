@@ -152,7 +152,7 @@ $(document).ready(function () {
 
 
 
-    var formEmail = document.getElementById("email-form");
+    var formEmail = document.getElementById("reserve-form");
 
     // Override the submit event
     formEmail.addEventListener("submit", function (e) {
