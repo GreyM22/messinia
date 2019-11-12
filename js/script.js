@@ -97,7 +97,7 @@ $(document).ready(function () {
     /************************************************************/
 
     // Validation of the reservation form
-    $('footer form').submit(function () {
+    $('footer form#reservation-form').submit(function () {
 
         let date = $("#date").val();
         let month = date.split("/")[0];
