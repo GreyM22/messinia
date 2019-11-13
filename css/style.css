@@ -40,10 +40,11 @@ h3 {
 }
 /* header section*/
 header {
+  background-color: #00355F;
   background-image: url("../images/header-view.jpg");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover;
+  background-size: auto 111.58%;
   z-index: 20;
 }
 

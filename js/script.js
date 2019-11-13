@@ -1,4 +1,10 @@
+//rellax effect for img
 
+var rellax = new Rellax('.rellax', {
+    center: true
+  })
+  
+/************************************************************** */
 $(document).ready(function () {
 
     // Add smooth scrolling to all links
@@ -182,13 +188,6 @@ $(document).ready(function () {
 
     // slide in animation 
 
-    // var waypoint = new Waypoint({
-    //     element: document.querySelector(".down-header .content"),
-    //     handler: function() {
-    //       $('.down-header .content').addClass('show')
-    //     }
-    //   })
-
       $('.down-header .content').waypoint(function() {
         $('.down-header .content').addClass('show')
       }, { offset: '85%' });
@@ -217,7 +216,14 @@ $(document).ready(function () {
         $('.social-net-feed > *').addClass('show')
       }, { offset: '85%' });
 
+      /*************************************************************/
 
+      //parallax effect for the bg img
+
+      $(window).scroll(function() {
+        var x = $(this).scrollTop();
+        $('header').css('background-position', '50%' + parseInt(-x / 10) + 'px' + ', 0% ' + parseInt(-x / 20) + 'px, center top');
+    });
 });
 
 /* Fromating the date in the booking form  */
