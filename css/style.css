@@ -114,8 +114,7 @@ header {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   background-color: transparent !important;
-  color: #487ae5 !important;
-  border: 1px solid #007aff;
+  border: 1px solid white;
   height: 46px;
   width: 161px;
   margin-left: 30px;
@@ -127,7 +126,7 @@ header a {
   text-transform: uppercase;
   font-family: "Red Hat Display", sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1.5px;
   line-height: 24px;
 }
@@ -430,7 +429,6 @@ section.review {
   margin-bottom: 32px;
 }
 
-
 #carouselReview .carousel-item .content {
   max-width: 694px;
   color: #484850;
@@ -440,11 +438,12 @@ section.review {
   line-height: 44px;
 }
 
+#carouselReview .carousel-indicators{
+  margin-top: 8.47vh;
+}
 #carouselReview .carousel-indicators li {
   box-sizing: none;
   flex: none;
-  width: 0;
-  height: 0;
   margin: 0;
   text-indent: none;
   background: none;
@@ -452,6 +451,20 @@ section.review {
   opacity: 1;
   padding-left: 10px;
 }
+
+.oval {
+  box-sizing: border-box;
+  height: 11px;
+  width: 11px;
+  border: 1px solid #84817f;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+#carouselReview .carousel-indicators li.active .oval{
+  opacity: 1;
+}
+
 /* end of review section*/
 
 /* social-net section */
@@ -466,13 +479,14 @@ section.review {
 }
 
 .social-net-feed a {
-  color: #007aff;
+  color: #66869F;
 }
 
 .social-net-feed .row {
   margin-top: 11.37vh;
   padding-left: 37px;
   padding-right: 37px;
+  z-index: 1;
 }
 
 .social-net-feed .col-4 {
@@ -483,6 +497,18 @@ section.review {
 .social-net-feed .col-2 {
   flex: 0 0 18.666667%;
   max-width: 18.666667%;
+}
+
+.social-net-feed .logo{
+  bottom: -15.71vh;
+  right: 2.56vw;
+  height: 73.83vh;
+  width: 73.83vh;
+  z-index: 0;
+  background-image: url("../images/social-net-logo.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 /* end of social-net section*/
 
@@ -504,7 +530,7 @@ footer::-webkit-scrollbar {
 }
 
 footer h2 span {
-  color: #007aff;
+  color: #00355F;
 }
 
 footer h2 {
@@ -560,20 +586,12 @@ footer form .form-control:focus {
 
 footer form input[type="submit"] {
   height: 67px;
-  border-radius: 0 !important;
-  background-color: #000000 !important;
   font-family: "Red Hat Display", sans-serif !important;
   font-weight: 500 !important;
   font-size: 11px !important;
   letter-spacing: 2.28px !important;
 }
 
-footer form input[type="submit"]:hover {
-  background-color: white !important;
-  color: black !important;
-  border-color: black !important;
-  outline: none !important;
-}
 
 .logo-button {
   display: block;
@@ -635,7 +653,7 @@ footer .term-privacy {
 
 .separator {
   margin-top: 3.82vh;
-  margin-bottom: 2.99vh;
+  margin-bottom: 5.89vh;
 }
 
 .separator::after {
