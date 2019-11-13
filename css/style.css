@@ -14,6 +14,15 @@ body {
   background-color: #f8f4f1;
 }
 
+h1 {
+  height: auto;
+  max-width: 706px;
+  font-family: "Playfair Display", serif;
+  font-size: 66px;
+  font-weight: 300;
+  line-height: 80px;
+}
+
 h2 {
   font-size: 36px;
   font-weight: 400;
@@ -23,6 +32,13 @@ h2 {
   font-family: "Playfair Display", serif;
 }
 
+h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 14px;
+  margin-top: 30px;
+}
 /* header section*/
 header {
   background-image: url("../images/header-view.jpg");
@@ -146,7 +162,7 @@ header .sms {
   line-height: 14px;
   height: 14px;
   position: absolute;
-  left: 33px;
+  left: -53px;
   top: 50%;
   margin-left: -97.5615px;
   transform: rotate(-90deg);
@@ -154,7 +170,7 @@ header .sms {
 
 header .scoial-net {
   position: absolute;
-  right: 0;
+  right: -19px;
   top: 50%;
   transform: rotate(-90deg);
   opacity: 0.6;
@@ -255,7 +271,6 @@ header .scoial-net {
 .navbar-collapse .scoial-net {
   margin-top: 4.66vh;
   opacity: 1;
-  top:0;
   transform: rotate(0);
 }
 
@@ -275,31 +290,99 @@ header .scoial-net {
   height: auto;
   overflow: visible;
 }
+
+header .container-fluid {
+  top: 0;
+  z-index: -1;
+}
+
+header .container-fluid::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 205px;
+  width: 2px;
+  background: #ffffff;
+}
 /* end of header section */
 
 /* section below header*/
 
 section.down-header .content {
-  max-width: 524px;
+  max-width: 623px;
   padding-top: 19.33vh;
   padding-bottom: 21.71vh;
-  font-size: 36px;
-  font-weight: 300;
-  line-height: 44px;
-  color: #007aff;
   font-family: "Playfair Display", serif;
+  color: #484850;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 50px;
 }
 
 /* end of section below header*/
 
+/* second section below header*/
+section.second-down-header .container {
+  padding-top: 19.33vh;
+  padding-bottom: 19.33vh;
+}
+
+section.second-down-header .container .row > div:first-child {
+  color: #484850;
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 53px;
+}
+
+section.second-down-header .container .row > div:last-child {
+  max-width: 423px;
+  color: #8a8a96;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+section.second-down-header .container .row > div:first-child::before {
+  content: "KALOSORISATE";
+  text-transform: uppercase;
+  display: block;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  position: absolute;
+  top: 100px;
+  left: -15px;
+  color: #d1d1d6;
+  font-family: "Red Hat Display";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 24px;
+}
+
+.btn {
+  height: 46px;
+  width: 161px;
+  border-radius: 4px;
+  background-color: #00355f;
+  border-color: #00355f;
+  font-family: "Brandon Grotesque";
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #00355f !important;
+}
+/* end of second section below header*/
+
 /* description section*/
 .description {
-  padding-top: 9.51vh;
-}
-.quots::before {
-  content: url(../images/quots.svg);
-  display: block;
-  margin-bottom: 32px;
+  padding-top: 15.61vh;
+  padding-bottom: 16.95vh;
+  background-color: #f8f4f1;
 }
 
 .content-description {
@@ -333,6 +416,43 @@ section.down-header .content {
 }
 
 /* end of description section*/
+
+/* review section*/
+
+section.review {
+  padding-top: 18.2vh;
+  padding-bottom: 18.61vh;
+}
+
+.quots::before {
+  content: url(../images/quots.svg);
+  display: block;
+  margin-bottom: 32px;
+}
+
+
+#carouselReview .carousel-item .content {
+  max-width: 694px;
+  color: #484850;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+}
+
+#carouselReview .carousel-indicators li {
+  box-sizing: none;
+  flex: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  text-indent: none;
+  background: none;
+  border: none;
+  opacity: 1;
+  padding-left: 10px;
+}
+/* end of review section*/
 
 /* social-net section */
 .social-net-feed {
