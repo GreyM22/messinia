@@ -307,6 +307,19 @@ header .container-fluid::after {
 /* end of header section */
 
 /* section below header*/
+section.down-header{
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+section.down-header.show{
+  opacity: 1;
+  transform: translateY(0px);
+
+}
 
 section.down-header .content {
   max-width: 623px;
@@ -370,6 +383,7 @@ section.second-down-header .container .row > div:first-child::before {
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
+  border-radius: 0px;
 }
 
 .btn:hover {
@@ -501,10 +515,10 @@ section.review {
 }
 
 .social-net-feed .logo {
-  bottom: -15.71vh;
+  bottom: -10.55vw;
   right: 2.56vw;
-  height: 73.83vh;
-  width: 73.83vh;
+  height: 49.53vw;
+  width: 49.53vw;
   z-index: 0;
   background-image: url("../images/social-net-logo.svg");
   background-position: center center;
@@ -624,7 +638,8 @@ footer .info,
 footer .sms-form {
   color: #5e5e64;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 3px;
   line-height: 21px;
   max-width: 632px;
   margin-top: 5.27vh;
@@ -698,9 +713,31 @@ input[type="number"] {
 }
 
 /****************************************************/
+
+@media only screen and (max-width: 622px) {
+  /* header section*/
+  h1 {
+    font-size: 46px;
+    line-height: 60px;
+  }
+  /* end of header section*/
+}
+
+/****************************************************/
 @media only screen and (max-width: 569px) {
   /* footer section*/
   footer form {
     width: 91.22vw;
   }
+}
+
+/*****************************************************/
+
+@media only screen and (max-width: 422px) {
+    /* header section*/
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    /* end of header section*/  
 }
