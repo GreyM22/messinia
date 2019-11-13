@@ -131,9 +131,9 @@ $(document).ready(function () {
         request.addEventListener("load", function () {
             if (request.status === 302) { // CloudCannon redirects on success
             }
-        });        
+        });
 
-            // Validation of the reservation form
+        // Validation of the reservation form
 
         let date = $("#date").val();
         let month = date.split("/")[0];
@@ -146,17 +146,17 @@ $(document).ready(function () {
             e.preventDefault();
 
             let request = new XMLHttpRequest();
-    
+
             request.addEventListener("load", function () {
                 if (request.status === 302) { // CloudCannon redirects on success
                 }
-            });        
+            });
             request.open(formEmail.method, formEmail.action);
             request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             request.send(getFormDataString(formEmail));
             $('footer .sms-form').text('Reservation made successfully')
             $(' footer form').trigger("reset");
-            $("footer").animate({ scrollTop: 0 }, "slow");        
+            $("footer").animate({ scrollTop: 0 }, "slow");
         }
         else if (parseInt(month) == parseInt(currentDate.getMonth()) && parseInt(day) >= parseInt(currentDate.getDate())) {
             if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
@@ -164,7 +164,7 @@ $(document).ready(function () {
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.send(getFormDataString(formEmail));
                 $('footer form ').trigger("reset");
-                $("footer").animate({ scrollTop: 0 }, "slow");        
+                $("footer").animate({ scrollTop: 0 }, "slow");
                 $('footer .sms-form').text('Reservation made successfully')
             }
             else {
@@ -178,6 +178,46 @@ $(document).ready(function () {
         }
 
     });
+    /*********************************************************/
+
+    // slide in animation 
+
+    // var waypoint = new Waypoint({
+    //     element: document.querySelector(".down-header .content"),
+    //     handler: function() {
+    //       $('.down-header .content').addClass('show')
+    //     }
+    //   })
+
+      $('.down-header .content').waypoint(function() {
+        $('.down-header .content').addClass('show')
+      }, { offset: '85%' });
+
+      $('section.second-down-header .container .row > div:last-child').waypoint(function() {
+        $('section.second-down-header .container .row > div:last-child').addClass('show')
+      }, { offset: '85%' });
+
+      $('section.second-down-header .container .row > div:first-child').waypoint(function() {
+        $('section.second-down-header .container .row > div:first-child').addClass('show')
+      }, { offset: '85%' });
+
+      $('.description .img-left').waypoint(function() {
+        $('.description .img-left').addClass('show')
+      }, { offset: '85%' });
+
+      $('.description .row > div:last-child').waypoint(function() {
+        $('.description .row > div:last-child').addClass('show')
+      }, { offset: '85%' });
+
+      $('#carouselReview').waypoint(function() {
+        $('#carouselReview').addClass('show')
+      }, { offset: '85%' });
+
+      $('.social-net-feed > *').waypoint(function() {
+        $('.social-net-feed > *').addClass('show')
+      }, { offset: '85%' });
+
+
 });
 
 /* Fromating the date in the booking form  */

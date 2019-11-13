@@ -307,18 +307,10 @@ header .container-fluid::after {
 /* end of header section */
 
 /* section below header*/
-section.down-header{
-  opacity: 0;
-  transform: translateY(100px);
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  transition: all 0.8s;
-}
 
-section.down-header.show{
-  opacity: 1;
+section.down-header .content.show{
+  opacity:1;
   transform: translateY(0px);
-
 }
 
 section.down-header .content {
@@ -330,6 +322,11 @@ section.down-header .content {
   font-size: 42px;
   font-weight: 300;
   line-height: 50px;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
 }
 
 /* end of section below header*/
@@ -346,6 +343,16 @@ section.second-down-header .container .row > div:first-child {
   font-size: 44px;
   font-weight: 300;
   line-height: 53px;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+section.second-down-header .container .row > div:first-child.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section.second-down-header .container .row > div:last-child {
@@ -354,8 +361,17 @@ section.second-down-header .container .row > div:last-child {
   font-size: 18px;
   font-weight: 500;
   line-height: 35px;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
 }
 
+section.second-down-header .container .row > div:last-child.show{
+  opacity: 1;
+  transform: translateY(0);
+}
 section.second-down-header .container .row > div:first-child::before {
   content: "KALOSORISATE";
   text-transform: uppercase;
@@ -407,26 +423,34 @@ section.second-down-header .container .row > div:first-child::before {
   font-weight: 500;
   line-height: 24px;
 }
-
+.description .img-left{
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+.description .img-left.show{
+  opacity: 1;
+  transform: translateY(0px);
+}
 .description .img-left img {
   width: 39.93vw;
   max-width: 575px;
   height: auto;
 }
 
-.description .row + .row {
-  padding-top: 22.01vw;
-  padding-bottom: 18.95vw;
+.description .row > div:last-child {
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
 }
 
-.description .row + .row img {
-  position: absolute;
-  margin-top: -47.67vh;
-  margin-left: -50px;
-  width: 37.7vw;
-  max-width: 543px;
-  bottom: -94px;
-  height: auto;
+.description .row > div:last-child.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 /* end of description section*/
@@ -442,6 +466,18 @@ section.review {
   content: url(../images/quots.svg);
   display: block;
   margin-bottom: 32px;
+}
+#carouselReview{
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+#carouselReview.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 #carouselReview .carousel-item .content {
@@ -488,6 +524,19 @@ section.review {
   padding-top: 8.99vh;
   padding-bottom: 14.47vh;
   margin-bottom: 123.16vh;
+}
+
+.social-net-feed > *{
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+.social-net-feed > *.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 .social-net-feed h2 {
   margin: 0 auto;
