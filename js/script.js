@@ -17,7 +17,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     /************************************************************/
-    
+
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {
 
@@ -254,14 +254,23 @@ $(document).ready(function () {
         let x = $(this).scrollTop();
 
         let imageSize = $('header').css('background-size');
+        let imagePoz = $('header').css('background-position');
         let imageHeight = imageSize.split(" ")[1];
-        if( imageHeight.slice(-1) == '%'){
-            imageHeight =  parseFloat(imageHeight.slice(0, imageHeight.length - 2))/100 * Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        let yPoz = imagePoz.split("%")[1];
+        yPoz = parseInt(yPoz.slice(0, yPoz.length - 2))
+
+        if (imageHeight.slice(-1) == '%') {
+            imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2)) / 100 * Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         } else {
             imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2))
         }
-        let y = parseInt(parseInt((-x / 10)) + (imageHeight / 2));
-        $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2)/10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
+
+        if ($.inArray('px', yPoz)) {
+            let y = parseInt(-x / 10);
+            $('header').css('background-position', '50%' + parseInt(-x / 10) + 'px' + ', 0% ' + parseInt(-x / 10) + 'px, center top');
+        } else {
+            $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2) / 10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
+        }
     });
 });
 

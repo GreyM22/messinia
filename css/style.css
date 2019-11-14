@@ -40,6 +40,7 @@ h3 {
 }
 /* header section*/
 header {
+  height:100vh;
   background-color: #00355f;
   background-image: url("../images/header-view.jpg");
   background-repeat: no-repeat;
