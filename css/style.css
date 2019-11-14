@@ -439,13 +439,7 @@ section.second-down-header .container .row > div:first-child::before {
   opacity: 1;
   transform: translateY(0px);
 }
-.description .img-left img {
-  width: 39.93vw;
-  max-width: 470px;
-  height: 48.95vw;
-  max-height: 705px;
-  height: auto;
-}
+
 
 .description .row > div:last-child {
   transform: translateY(100px);
