@@ -256,7 +256,7 @@ $(document).ready(function () {
             imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2))
         }
         let y = parseInt(parseInt((-x / 10)) + (imageHeight / 2));
-        $('header').css('background-position', '50%' + parseInt((parseInt((x / 15)) + (imageHeight / 2)/10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
+        $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2)/10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
     });
 });
 
