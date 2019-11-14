@@ -10,9 +10,14 @@ var rellaxH = new Rellax('.rellax-h', {
 })
 
 
-/************************************************************** */
+/****************************************************************/
 $(document).ready(function () {
 
+    // tooltip initialized 
+    $('[data-toggle="tooltip"]').tooltip();
+
+    /************************************************************/
+    
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {
 
