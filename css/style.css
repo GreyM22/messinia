@@ -43,8 +43,8 @@ header {
   background-color: #00355F;
   background-image: url("../images/header-view.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 111.58% 111.58%;
+  background-position: center center;
+  background-size: 1440px 1079px;
   z-index: 20;
 }
 
@@ -122,7 +122,10 @@ header {
 }
 
 .nav-pills .nav-link.active:hover {
-  border-color: #00355f;
+  border-color: white;
+  background-color: #00355f !important;
+  color: white!important;
+
 }
 
 header a {
@@ -133,10 +136,12 @@ header a {
   font-weight: 500;
   letter-spacing: 1.5px;
   line-height: 24px;
+  transition: all .15s ease-in-out;
 }
 
 header a:hover {
   color: #00355f !important;
+
 }
 
 a.navbar-brand {
@@ -156,26 +161,25 @@ a.navbar-brand::before {
 }
 
 header .sms {
-  color: #ffffff;
   font-family: "Red Hat Display", sans-serif;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 1.5px;
   line-height: 14px;
   height: 14px;
-  position: absolute;
-  left: -53px;
+  left: -72px;
   top: 50%;
   margin-left: -97.5615px;
   transform: rotate(-90deg);
 }
 
 header .scoial-net {
-  position: absolute;
-  right: -19px;
+  margin-top: -44.457px !important;
+  list-style-type: none;
+  right: 5px;
   top: 50%;
-  transform: rotate(-90deg);
 }
+
 .scoial-net li:first-child a.nav-link::after {
   content: url(../images/instagram-icon.svg);
 }
@@ -253,7 +257,7 @@ header .scoial-net {
 .navbar-collapse .logo-button {
   height: 0;
   opacity: 0;
-  margin-top: 24.49vh;
+  margin-top: 27.49vh;
   z-index: 21;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -270,9 +274,7 @@ header .scoial-net {
 }
 
 .navbar-collapse .scoial-net {
-  margin-top: 4.66vh;
-  opacity: 1;
-  transform: rotate(0);
+  margin-top: 4.66vh!important;
 }
 
 .navbar-collapse .info {
@@ -301,8 +303,9 @@ header .container-fluid::after {
   content: "";
   position: absolute;
   bottom: 0;
-  height: 205px;
-  width: 2px;
+  height: 21.19vh;
+  min-height: 94px;
+  width: 1px;
   background: #ffffff;
 }
 /* end of header section */
@@ -396,11 +399,12 @@ section.second-down-header .container .row > div:first-child::before {
   border-radius: 4px;
   background-color: #00355f;
   border-color: #00355f;
-  font-family: "Brandon Grotesque";
+  font-family: "Playfair Display", serif;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
   border-radius: 0px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -437,7 +441,9 @@ section.second-down-header .container .row > div:first-child::before {
 }
 .description .img-left img {
   width: 39.93vw;
-  max-width: 575px;
+  max-width: 470px;
+  height: 48.95vw;
+  max-height: 705px;
   height: auto;
 }
 
@@ -736,6 +742,14 @@ input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
 /* end of footer*/
+/*****************************************************/
+
+@media only screen and (min-width: 1441px) {
+  /* header section */
+  header{
+    background-size: 100vw 74.93vw;
+  }
+}
 
 /*****************************************************/
 
