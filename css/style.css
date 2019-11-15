@@ -747,9 +747,9 @@ input[type="number"] {
 
 @media only screen and (min-height: 967px) {
   /* header section */
-  header {
+  /* header {
     background-size: 100vw 74.93vw;
-  }
+  } */
 }
 
 /*****************************************************/
