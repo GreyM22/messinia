@@ -156,7 +156,11 @@ $(document).ready(function () {
 
         let currentDate = new Date();
 
-        if (parseInt(month) > parseInt(currentDate.getMonth())) {
+        let x = parseInt(month);
+        let y = parseInt(currentDate.getMonth());
+        console.log(currentDate)
+
+        if (parseInt(month) > parseInt(currentDate.getMonth()) + 1) {
             e.preventDefault();
 
             let request = new XMLHttpRequest();
@@ -172,7 +176,7 @@ $(document).ready(function () {
             $(' footer form').trigger("reset");
             $("footer").animate({ scrollTop: 0 }, "slow");
         }
-        else if (parseInt(month) == parseInt(currentDate.getMonth()) && parseInt(day) >= parseInt(currentDate.getDate())) {
+        else if (parseInt(month) == parseInt(currentDate.getMonth() + 1) && parseInt(day) >= parseInt(currentDate.getDate())) {
             if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
                 request.open(formEmail.method, formEmail.action);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
