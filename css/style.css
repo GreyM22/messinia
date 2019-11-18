@@ -365,7 +365,7 @@ section.down-header .content {
   padding-bottom: 21.71vh;
   font-family: "Playfair Display", serif;
   color: #484850;
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 300;
   line-height: 50px;
   transform: translateY(100px);
@@ -726,7 +726,7 @@ footer .info,
 footer .sms-form {
   color: #5e5e64;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 3px;
   line-height: 21px;
   max-width: 632px;
@@ -734,7 +734,7 @@ footer .sms-form {
 }
 
 footer .sms-form {
-  color: #0a7fff;
+  color: #1962C8;
 }
 
 footer .info a {

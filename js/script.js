@@ -267,6 +267,7 @@ $(document).ready(function () {
     };
 
     //parallax effect for the bg img
+    var lastScroll = 0;
 
     $(window).scroll(function () {
         let x = $(this).scrollTop();
@@ -285,10 +286,25 @@ $(document).ready(function () {
         let z = yPoz.indexOf("px");
 
         if (yPoz.indexOf("px") !== -1) {
-            let y = parseInt(-x / 10);
-            yPoz = parseInt(yPoz);
-            let sum = parseInt(-x + yPoz / 20);
-            $('header').css('background-position', '50%' + parseInt(-x + yPoz / 20) + 'px' + ', 0% ' + parseInt(-x / 20) + 'px, center top');
+
+            let y = parseFloat(-x / 200);
+            yPoz = parseFloat(yPoz);
+            let sum = 0;
+
+
+            if( x > lastScroll){
+
+              sum = yPoz + y;
+
+            } else{
+              sum = yPoz - y;
+              sum = sum -( sum*0.01489);
+
+            }
+
+            lastScroll = x;
+
+            $('header').css('background-position', '50%' + sum + 'px' + ', 0% ' + sum + 'px, center top');
         } else {
             $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2) / 10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
         }
