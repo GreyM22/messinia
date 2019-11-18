@@ -40,7 +40,7 @@ h3 {
 }
 /* header section*/
 header {
-  height:100vh;
+  height: 100vh;
   background-color: #00355f;
   background-image: url("../images/header-view.jpg");
   background-repeat: no-repeat;
@@ -140,8 +140,9 @@ header a:hover {
   color: #00355f !important;
 }
 
-header .sms a:hover, header .info a:hover{
-  color: white!important;
+header .sms a:hover,
+header .info a:hover {
+  color: white !important;
 }
 
 a.navbar-brand {
@@ -282,6 +283,8 @@ header .scoial-net {
 }
 
 .navbar-collapse .info {
+  font-size: 12px;
+  line-height: 16px;
   padding-top: 2.41vh;
   opacity: 0;
   height: 0;
@@ -363,7 +366,7 @@ section.second-down-header .container .row > div:first-child.show {
   transform: translateY(0);
 }
 
-section.second-down-header .container .row > div:first-child .btn{
+section.second-down-header .container .row > div:first-child .btn {
   font-family: "Red Hat Display", sans-serif;
 }
 
@@ -750,6 +753,24 @@ input[type="number"] {
   /* header {
     background-size: 100vw 74.93vw;
   } */
+}
+
+/*****************************************************/
+
+@media only screen and (max-height: 600px) {
+  /* header section */
+  .navbar-collapse .logo-button {
+    margin-top: 23.49vh;
+  }
+}
+
+/*****************************************************/
+
+@media only screen and (max-height: 538px) {
+  /* header section */
+  .navbar-collapse {
+    padding-top: 17.57vh;
+  }
 }
 
 /*****************************************************/

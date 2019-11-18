@@ -55,7 +55,7 @@ header {
 
 .menu .btn-secondary {
   color: #8e8e93;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   background: transparent !important;
@@ -83,4 +83,21 @@ header {
   box-sizing: border-box;
   border-radius: 4px;
   line-height: 28px;
+  opacity: 0;
+  transform: translateY(100px);
+  transform: translateY(100px);
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.menu .nav-link.active:hover{
+  color:white!important;
+  background-color: #00355f !important;
+
+}
+.menu .nav-link.active.show{
+  opacity: 1;
+  transform: translateY(0);
+
 }
