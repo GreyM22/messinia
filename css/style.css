@@ -21,6 +21,16 @@ h1 {
   font-size: 66px;
   font-weight: 300;
   line-height: 80px;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+h1.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 h2 {
@@ -30,6 +40,7 @@ h2 {
   max-width: 423px;
   color: black;
   font-family: "Playfair Display", serif;
+  margin: 0 auto;
 }
 
 h3 {
@@ -37,6 +48,16 @@ h3 {
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 14px;
+  transform: translateY(100px);
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+h3.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 /* header section*/
 header {
@@ -310,10 +331,24 @@ header .container-fluid::after {
   content: "";
   position: absolute;
   bottom: 0;
-  height: 21.19vh;
-  min-height: 94px;
+  height: 0;
+  min-height: 0;
   width: 1px;
   background: #ffffff;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+
+}
+
+header .container-fluid.show::after{
+  height: 21.19vh;
+  min-height: 94px;
+  opacity:1;
 }
 /* end of header section */
 
@@ -548,9 +583,6 @@ section.review {
   opacity: 1;
   transform: translateY(0px);
 }
-.social-net-feed h2 {
-  margin: 0 auto;
-}
 
 .social-net-feed a {
   color: #66869f;
@@ -607,9 +639,6 @@ footer h2 span {
   color: #00355f;
 }
 
-footer h2 {
-  margin: 0 auto;
-}
 
 footer form {
   width: 520px;
@@ -696,7 +725,7 @@ footer .scoial-net li:last-child a.nav-link::after {
 footer .info,
 footer .sms-form {
   color: #5e5e64;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
   line-height: 21px;

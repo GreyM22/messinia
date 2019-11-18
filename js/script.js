@@ -4,6 +4,8 @@ var rellax = new Rellax('.rellax', {
     center: true
 })
 
+var el1 = "50% 0px";
+var el2 = el1.slice(4);
 
 /****************************************************************/
 $(document).ready(function () {
@@ -194,6 +196,27 @@ $(document).ready(function () {
 
     // slide in animation 
 
+    $('h1').waypoint(function () {
+        $('h1').addClass('show')
+    }, { offset: '85%' });
+
+    $('h3').waypoint(function () {
+        $('h3').addClass('show')
+    }, { offset: '85%' });
+
+    $('header .container-fluid').waypoint(function () {
+        $('header .container-fluid').addClass('show')
+    }, { offset: '85%' });
+
+    setInterval(function(){
+        $('header .container-fluid').removeClass('show')
+    }, 5000);
+
+    setInterval(function(){
+        if($('header .container-fluid').hasClass('show')) return;
+        else $('header .container-fluid').addClass('show');
+    }, 2000);
+
     $('.down-header .content').waypoint(function () {
         $('.down-header .content').addClass('show')
     }, { offset: '85%' });
@@ -250,9 +273,8 @@ $(document).ready(function () {
 
         let imageSize = $('header').css('background-size');
         let imagePoz = $('header').css('background-position');
-        let imageHeight = imageSize.split(" ")[1];
-        let yPoz = imagePoz.split("%")[1];
-        yPoz = parseInt(yPoz.slice(0, yPoz.length - 2))
+        var imageHeight = imageSize.split(" ")[1];
+        let yPoz = imagePoz.slice(4);
 
         if (imageHeight.slice(-1) == '%') {
             imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2)) / 100 * Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -260,9 +282,13 @@ $(document).ready(function () {
             imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2))
         }
 
-        if ($.inArray('px', yPoz)) {
+        let z = yPoz.indexOf("px");
+
+        if (yPoz.indexOf("px") !== -1) {
             let y = parseInt(-x / 10);
-            $('header').css('background-position', '50%' + parseInt(-x / 10) + 'px' + ', 0% ' + parseInt(-x / 10) + 'px, center top');
+            yPoz = parseInt(yPoz);
+            let sum = parseInt(-x + yPoz / 20);
+            $('header').css('background-position', '50%' + parseInt(-x + yPoz / 20) + 'px' + ', 0% ' + parseInt(-x / 20) + 'px, center top');
         } else {
             $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2) / 10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
         }
