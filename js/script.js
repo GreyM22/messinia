@@ -4,11 +4,6 @@ var rellax = new Rellax('.rellax', {
     center: true
 })
 
-var rellaxH = new Rellax('.rellax-h', {
-    center: true,
-    horizontal: true
-})
-
 
 /****************************************************************/
 $(document).ready(function () {

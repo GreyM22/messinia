@@ -24,3 +24,7 @@ header {
     width: 33.125vw;
     height: 49.72vw;
 }
+
+.information a{
+    color: #00355f;
+}
