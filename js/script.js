@@ -54,29 +54,33 @@ $(document).ready(function () {
 
         let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
         let buttonId = $(this).attr('id');
-        $('header').toggleClass('position-fixed');
-        if (jQuery.inArray(buttonId, arr) !== -1) { $('.navbar-collapse').toggleClass('open'); }
+        if (jQuery.inArray(buttonId, arr) !== -1) { 
+            $('.navbar-collapse').toggleClass('open');
+        }
         if ($(".bottom-close").hasClass("clicked")) {
             $(".bottom-close").toggleClass("clicked");
             setTimeout(function () {
                 $(".top-close").toggleClass("clicked");
-            }, 125);
-
+            }, 125);    
+            $('header').toggleClass('position-fixed');     
         }
         else {
             $(".bottom-bar").toggleClass("clicked");
             setTimeout(function () {
                 $(".top-bar").toggleClass("clicked");
             }, 125);
+            setTimeout(function () {
+                $('header').toggleClass('position-fixed');
+            }, 700);
+        
         }
+
         setTimeout(function () {
             $(".menu-icon a:first-child").toggleClass("d-none");
             $(".menu-icon a:first-child").toggleClass("d-visible");
             $(".menu-icon a:last-child").toggleClass("d-none");
             $(".menu-icon a:last-child").toggleClass("d-visible");
             setTimeout(function () {
-                let id = $(this).attr('id');
-                let exp = jQuery.inArray($(this).attr('id'), arr);
                 if (jQuery.inArray(buttonId, arr) == -1) { $('.navbar-collapse').toggleClass('open'); }
                 $('.navbar-collapse .bg-img').toggleClass('open');
                 $(".menu-icon a.d-visible span:first-child").toggleClass("clicked");
