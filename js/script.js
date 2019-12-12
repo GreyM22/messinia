@@ -2,10 +2,7 @@
 
 var rellax = new Rellax('.rellax', {
     center: true
-})
-
-var el1 = "50% 0px";
-var el2 = el1.slice(4);
+});
 
 /****************************************************************/
 $(document).ready(function () {
@@ -181,13 +178,21 @@ $(document).ready(function () {
             $("footer").animate({ scrollTop: 0 }, "slow");
         }
         else if (parseInt(month) == parseInt(currentDate.getMonth() + 1) && parseInt(day) >= parseInt(currentDate.getDate())) {
-            if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
+            if( parseInt(day) >= parseInt(currentDate.getDate()) ){
                 request.open(formEmail.method, formEmail.action);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.send(getFormDataString(formEmail));
                 $('footer form ').trigger("reset");
                 $("footer").animate({ scrollTop: 0 }, "slow");
-                $('footer .sms-form').text('Reservation made successfully')
+                $('footer .sms-form').text('Reservation made successfully');
+            }
+            else if (parseInt(time.split(':')[0]) >= (parseInt(currentDate.getHours()) + 2) && parseInt(time.split(':')[1]) >= parseInt(currentDate.getMinutes())) {
+                request.open(formEmail.method, formEmail.action);
+                request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                request.send(getFormDataString(formEmail));
+                $('footer form ').trigger("reset");
+                $("footer").animate({ scrollTop: 0 }, "slow");
+                $('footer .sms-form').text('Reservation made successfully');
             }
             else {
                 $('footer .sms-form').text('*Pleas book two hours in advance');
@@ -295,24 +300,6 @@ $(document).ready(function () {
 
         if (yPoz.indexOf("px") !== -1) {
 
-            let y = parseFloat(-x / 200);
-            yPoz = parseFloat(yPoz);
-            let sum = 0;
-
-
-            if( x > lastScroll){
-
-              sum = yPoz + y;
-
-            } else{
-              sum = yPoz - y;
-              sum = sum -( sum*0.01489);
-
-            }
-
-            lastScroll = x;
-
-            $('header').css('background-position', '50%' + sum + 'px' + ', 0% ' + sum + 'px, center top');
         } else {
             $('header').css('background-position', '50%' + parseInt((parseInt((x / 20)) + (imageHeight / 2) / 10)) + '%' + ', 0% ' + parseInt(-x / 20) + 'px, center center');
         }
