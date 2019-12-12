@@ -350,6 +350,12 @@ header .container-fluid.show::after{
   min-height: 94px;
   opacity:1;
 }
+
+header a:hover, header a.current {
+  color: #00355f !important;
+}
+
+
 /* end of header section */
 
 /* section below header*/
