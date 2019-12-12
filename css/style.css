@@ -666,7 +666,8 @@ footer form #date {
 }
 
 footer form #name,
-footer form #email {
+footer form #email,
+footer form #number {
   color: #000000;
   font-family: "Red Hat Display", sans-serif;
   font-size: 12px;
