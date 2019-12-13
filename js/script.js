@@ -44,6 +44,7 @@ $(document).ready(function () {
         } // End if
     });
 
+
     /**************************************************/
 
     // Animation for the toggle navigation bar

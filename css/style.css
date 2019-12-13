@@ -574,7 +574,7 @@ section.review {
   height: auto;
   padding-top: 8.99vh;
   padding-bottom: 14.47vh;
-  margin-bottom: 123.16vh;
+  margin-bottom: 122.16vh;
 }
 
 .social-net-feed > * {
@@ -635,6 +635,7 @@ footer {
   overflow: hidden;
   overflow-y: auto;
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 footer::-webkit-scrollbar {
