@@ -165,8 +165,13 @@ header a {
 }
 
 header a:hover {
+  color: white !important;
+}
+
+header .navbar-collapse a:hover {
   color: #00355f !important;
 }
+
 
 header .sms a:hover,
 header .info a:hover {
@@ -358,11 +363,24 @@ header .container-fluid.show::after{
   opacity:1;
 }
 
-header a:hover, header a.current {
-  color: #00355f !important;
+
+.left-to-right:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 1.5px solid white;
+  transition: 0.4s ease-in-out;
 }
 
-
+.left-to-right:hover:after {
+  width: 95%;
+}
+.left-to-right.current:after{
+  
+  width: 95%;
+}
 /* end of header section */
 
 /* section below header*/
@@ -524,6 +542,10 @@ section.review {
   content: url(../images/quots.svg);
   display: block;
   margin-bottom: 32px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 34px;
+  height: 26px;
 }
 #carouselReview {
   transform: translateY(100px);
