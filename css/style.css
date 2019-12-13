@@ -59,6 +59,13 @@ h3.show{
   opacity: 1;
   transform: translateY(0px);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 /* header section*/
 header {
   height: 100vh;
