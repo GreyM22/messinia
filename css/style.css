@@ -201,10 +201,11 @@ header .sms {
   letter-spacing: 1.5px;
   line-height: 14px;
   height: 14px;
-  left: -59px;
+  left: 16px;
   top: 50%;
-  margin-left: -97.5615px;
+  margin-left: -150px;
   transform: rotate(-90deg);
+  max-width: 300px;
 }
 
 header .scoial-net {

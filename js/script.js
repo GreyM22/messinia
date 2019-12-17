@@ -10,6 +10,61 @@ $(document).ready(function () {
     // tooltip initialized 
     $('[data-toggle="tooltip"]').tooltip();
 
+    //implementing the schedule
+
+    var restSchedule = [
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        },
+        {
+            start: 13,
+            close: 23,
+            notOpen: false
+        }
+    ];
+
+    var today = new Date();
+
+    if( restSchedule[today.getDay()].notOpen ){
+        $('.schedule').text('Today is not open');    
+    }
+    else if( restSchedule[today.getDay()].start > today.getHours() ){
+        $('.schedule').text('Opens today at '+ restSchedule[today.getDay()].start + ":00" )  ;  
+    }
+    else if( restSchedule[today.getDay()].close > today.getHours() ){
+        $('.schedule').text('OPEN TODAY UNTIL '+ restSchedule[today.getDay()].close + ":00" );
+    }
+    else if ( restSchedule[today.getDay()].close <= today.getHours()){
+        $('.schedule').text('Closed at '+ restSchedule[today.getDay()].close + ":00" );
+    }
+
     /************************************************************/
 
     // Add smooth scrolling to all links
