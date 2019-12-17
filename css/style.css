@@ -800,6 +800,12 @@ footer .term-privacy {
   text-decoration: underline;
 }
 
+.term-privacy a:hover {
+  color: #5e5e64;
+  text-decoration: underline;
+}
+
+
 .separator {
   margin-top: 3.82vh;
   margin-bottom: 5.89vh;
