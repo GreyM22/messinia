@@ -7,8 +7,6 @@ var rellax = new Rellax('.rellax', {
 /****************************************************************/
 $(document).ready(function () {
 
-    // tooltip initialized 
-    $('[data-toggle="tooltip"]').tooltip();
 
     //implementing the schedule
 
