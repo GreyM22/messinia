@@ -218,12 +218,24 @@ header .scoial-net {
   content: url(../images/instagram-icon.svg);
 }
 
+.scoial-net li:first-child a.nav-link{
+  z-index: 20;
+}
+
 .scoial-net li:first-child + li a.nav-link::after {
   content: url(../images/facebook-icon.svg);
 }
 
+.scoial-net li:first-child + li a.nav-link{
+  z-index: 20;
+}
+
 .scoial-net li:last-child a.nav-link::after {
   content: url(../images/twitter-icon.svg);
+}
+
+.scoial-net li:last-child a.nav-link{
+  z-index: 20;
 }
 
 .navbar-collapse {
@@ -305,6 +317,7 @@ header .scoial-net {
 .navbar-collapse .logo-button.slide {
   height: auto;
   opacity: 1;
+  z-index: 20;
 }
 
 .navbar-collapse .logo-button::after {
