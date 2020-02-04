@@ -846,7 +846,8 @@ input[type="number"] {
   left     : 50%;
   width    : 50px;
   height   : 50px;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  z-index: 1050;
 }
 
 .double-bounce1,
@@ -859,22 +860,24 @@ input[type="number"] {
   position        : absolute;
   top             : 0;
   left            : 0;
-  animation       : sk-bounce 2s infinite ease-in-out
+  animation       : sk-bounce 2s infinite ease-in-out;
+  z-index: 1050;
+
 }
 
 .double-bounce2 {
-  animation-delay: -1s
+  animation-delay: -1s;
 }
 
 @keyframes sk-bounce {
 
   0%,
   100% {
-      transform: scale(0)
+      transform: scale(0);
   }
 
   50% {
-      transform: scale(1)
+      transform: scale(1);
   }
 }
 
