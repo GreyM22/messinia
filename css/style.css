@@ -840,6 +840,37 @@ input[type="number"] {
 }
 /* end of footer*/
 
+/** for loading the page **/
+
+.demo-preview-cont {
+  position          : absolute;
+  visibility        : hidden;
+  top               : 0;
+  left              : 0;
+  right             : 0;
+  bottom            : 0;
+  -webkit-transition: .4s background-color, .4s visibility;
+  -o-transition     : .4s background-color, .4s visibility;
+  transition        : .4s background-color, .4s visibility
+}
+
+.demo-preview-cont.is-active {
+  visibility      : visible;
+  background-color: rgba(0, 0, 0, .7)
+}
+
+.demo-preview-cont>img {
+  display      : none;
+  position     : fixed;
+  border-radius: 4px;
+  z-index      : 6;
+  width        : 590px
+}
+
+.demo-preview-cont.is-active>img {
+  display: block
+}
+
 /*****************************************************/
 
 @media only screen and (min-height: 967px) {
