@@ -840,8 +840,6 @@ input[type="number"] {
 }
 /* end of footer*/
 
-/** for loading the page **/
-
 .demo-preview-cont {
   position          : absolute;
   visibility        : hidden;
