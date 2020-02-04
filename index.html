@@ -50,6 +50,8 @@
         rel="stylesheet">
     <!-- bootstrap stylesheet file -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- for the loading spinner -->
+    <link rel="stylesheet" href="css/animsition.min.css">
     <!-- main stylesheet file -->
     <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
@@ -333,7 +335,12 @@
     </script>
 </head>
 
-<body>
+<body class="animsition"
+data-animsition-in-class="fade-in"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-out"
+  data-animsition-out-duration="800"
+>
     <header class=" w-100 min-vh-100 text-white position-relative">
         <div class="container">
             <nav class="navbar d-flex justify-content-between pt-3 pt-md-5 mx-lg-5">
@@ -669,9 +676,9 @@
     <!-- bootstrap js-->
     <script src="js/bootstrap.min.js"></script>
     <!-- slide up animation for the section-->
-    <!-- <script src="js/jquery.waypoints.min.js"></script> -->
+    <script src="js/jquery.waypoints.min.js"></script>
     <!-- rellax effect for img-->
-    <!-- <script src="js/rellax.min.js"></script> -->
+    <script src="js/rellax.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
     <script>
@@ -680,13 +687,14 @@
         gtag('js', new Date());
         gtag('config', '');
     </script>
+    <script src="js/animsition.min.js"></script>
     <!-- main js file -->
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
     <!-- testing the loading page -->
     <!-- <script src="js/pollyfill.min.js"></script> -->
-    <script src="js/animation.min.js"></script>
+    <!-- <script src="js/animation.min.js"></script>
     <script src="js/svg4everyone.lagacy.min.js"></script>
-    <script src="js/test2.js"></script>
+    <script src="js/test2.js"></script> -->
 </body>
 
 </html>

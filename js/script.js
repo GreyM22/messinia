@@ -50,17 +50,17 @@ $(document).ready(function () {
 
     var today = new Date();
 
-    if( restSchedule[today.getDay()].notOpen ){
-        $('.schedule').text('Today is not open');    
+    if (restSchedule[today.getDay()].notOpen) {
+        $('.schedule').text('Today is not open');
     }
-    else if( restSchedule[today.getDay()].start > today.getHours() ){
-        $('.schedule').text('Opens today at '+ restSchedule[today.getDay()].start + ":00" )  ;  
+    else if (restSchedule[today.getDay()].start > today.getHours()) {
+        $('.schedule').text('Opens today at ' + restSchedule[today.getDay()].start + ":00");
     }
-    else if( restSchedule[today.getDay()].close > today.getHours() ){
-        $('.schedule').text('OPEN TODAY UNTIL '+ restSchedule[today.getDay()].close + ":00" );
+    else if (restSchedule[today.getDay()].close > today.getHours()) {
+        $('.schedule').text('OPEN TODAY UNTIL ' + restSchedule[today.getDay()].close + ":00");
     }
-    else if ( restSchedule[today.getDay()].close <= today.getHours()){
-        $('.schedule').text('Closed at '+ restSchedule[today.getDay()].close + ":00" );
+    else if (restSchedule[today.getDay()].close <= today.getHours()) {
+        $('.schedule').text('Closed at ' + restSchedule[today.getDay()].close + ":00");
     }
 
     /************************************************************/
@@ -105,15 +105,15 @@ $(document).ready(function () {
 
         let arr = ['firstLink', 'secondLink', 'thirdLink', 'forthLink'];
         let buttonId = $(this).attr('id');
-        if (jQuery.inArray(buttonId, arr) !== -1) { 
+        if (jQuery.inArray(buttonId, arr) !== -1) {
             $('.navbar-collapse').toggleClass('open');
         }
         if ($(".bottom-close").hasClass("clicked")) {
             $(".bottom-close").toggleClass("clicked");
             setTimeout(function () {
                 $(".top-close").toggleClass("clicked");
-            }, 125);    
-            $('header').toggleClass('position-fixed');     
+            }, 125);
+            $('header').toggleClass('position-fixed');
         }
         else {
             $(".bottom-bar").toggleClass("clicked");
@@ -123,7 +123,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('header').toggleClass('position-fixed');
             }, 700);
-        
+
         }
 
         setTimeout(function () {
@@ -221,7 +221,7 @@ $(document).ready(function () {
             $("footer").animate({ scrollTop: 0 }, "slow");
         }
         else if (parseInt(month) == parseInt(currentDate.getMonth() + 1) && parseInt(day) >= parseInt(currentDate.getDate())) {
-            if( parseInt(day) > parseInt(currentDate.getDate()) ){
+            if (parseInt(day) > parseInt(currentDate.getDate())) {
                 request.open(formEmail.method, formEmail.action);
                 request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.send(getFormDataString(formEmail));
@@ -264,12 +264,12 @@ $(document).ready(function () {
         $('header .container-fluid').addClass('show')
     }, { offset: '85%' });
 
-    setInterval(function(){
+    setInterval(function () {
         $('header .container-fluid').removeClass('show')
     }, 5000);
 
-    setInterval(function(){
-        if($('header .container-fluid').hasClass('show')) return;
+    setInterval(function () {
+        if ($('header .container-fluid').hasClass('show')) return;
         else $('header .container-fluid').addClass('show');
     }, 2000);
 
@@ -392,4 +392,29 @@ time.addEventListener('input', function (e) {
         return v.length == 2 && i < 1 ? v + ' : ' : v;
     });
     this.value = output.join('').substr(0, 14);
+});
+
+$(document).ready(function () {
+    $(".animsition").animsition({
+        inClass: 'fade-in',
+        outClass: 'fade-out',
+        inDuration: 1500,
+        outDuration: 800,
+        linkElement: '.animsition-link',
+        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+        loading: true,
+        loadingParentElement: 'body', //animsition wrapper element
+        loadingClass: 'animsition-loading',
+        loadingInner: '', // e.g '<img src="loading.svg" />'
+        timeout: false,
+        timeoutCountdown: 5000,
+        onLoadEvent: true,
+        browser: ['animation-duration', '-webkit-animation-duration'],
+        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+        overlay: false,
+        overlayClass: 'animsition-overlay-slide',
+        overlayParentElement: 'body',
+        transition: function (url) { window.location.href = url; }
+    });
 });
