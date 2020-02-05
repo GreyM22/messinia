@@ -5,10 +5,14 @@ header {
 
 /* menu section */
 
-.menu h2 {
-  color: #484850;
-  font-size: 72px;
+.menu h1 {
+  color      : #484850;
+  font-size  : 72px;
   line-height: 86px;
+  font-weight: 400;
+  max-width  : 423px;
+  font-family: "Playfair Display", serif;
+  margin     : 0 auto;
 }
 
 .menu .item {

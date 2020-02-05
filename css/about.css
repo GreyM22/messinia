@@ -1,15 +1,19 @@
 header {
-  height: 28.43vh;
+  height             : 28.43vh;
   background-position: center -80px;
-  background-size: 1440px 1079px;
+  background-size    : 1440px 1079px;
 }
 
 /* contact section */
 
-.down-header h2 {
-  color: #484850;
-  font-size: 72px;
+.down-header h1 {
+  color      : #484850;
+  font-size  : 72px;
   line-height: 86px;
+  font-weight: 400;
+  max-width  : 423px;
+  font-family: "Playfair Display", serif;
+  margin     : 0 auto;
 }
 
 /* information section */
@@ -17,6 +21,7 @@ header {
 .information {
   margin-bottom: 123.16vh;
 }
+
 .information h2 {
   color: #484850;
 }
