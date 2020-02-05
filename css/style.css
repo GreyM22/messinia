@@ -738,7 +738,7 @@ footer form #date {
 
 footer form #name,
 footer form #email,
-footer form #number {
+footer form #phone {
   color         : #000000;
   font-family   : "Red Hat Display", sans-serif;
   font-size     : 12px;
@@ -748,6 +748,11 @@ footer form #number {
   height        : 60px;
   text-transform: uppercase;
 }
+
+.intl-tel-input {
+  display: block !important;
+}
+
 
 footer form .form-control {
   border-radius: 0;
