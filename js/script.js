@@ -140,8 +140,12 @@ $(document).ready(function () {
         autoPlaceholder: 'aggressive',
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js",
         geoIpLookup: function (callback) {
-            fetch('https://api.ipdata.co/?api-key=a86af3a7a4a375bfa71f9259b5404149d1eabb74adcc275e4faf9dfe', {
-                cache: 'reload'
+            fetch('https://api.ipdata.co/?api-key=a86af3a7a4a375bfa71f9259b5404149d1eabb74adcc275e4faf9dfe',
+            $("footer .sms-form").text("Reservation made successfully"),
+            $(" footer form").trigger("reset"),
+            $("footer").animate({ scrollTop: 0 }, "slow"),
+            {
+                
             }).then(response => {
                 if (response.ok) {
                     return response.json()
