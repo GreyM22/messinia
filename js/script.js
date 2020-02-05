@@ -174,37 +174,6 @@ $(document).ready(function () {
     }
 
 
-    function getFormDataString(formEl) {
-        var formData = new FormData(formEl),
-            data = [];
-
-        for (var keyValue of formData) {
-            data.push(
-                encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1])
-            );
-        }
-
-        return data.join("&");
-    }
-
-    var formEmail = document.getElementById("reserve-form");
-
-    // Override the submit event
-    formEmail.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let request = new XMLHttpRequest();
-
-        request.addEventListener("load", function () {
-            if (request.status === 302) {
-                // CloudCannon redirects on success
-            }
-        });
-        request.send(getFormDataString(formEmail));
-        $("footer .sms-form").text("Reservation made successfully");
-        $(" footer form").trigger("reset");
-        $("footer").animate({ scrollTop: 0 }, "slow");
-    });
     /*********************************************************/
 
     // slide in animation
