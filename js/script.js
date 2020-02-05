@@ -6,65 +6,6 @@ var rellax = new Rellax(".rellax", {
 
 /****************************************************************/
 $(document).ready(function () {
-    //implementing the schedule
-/*
-    var restSchedule = [
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        },
-        {
-            start: 13,
-            close: 23,
-            notOpen: false
-        }
-    ];
-
-    var today = new Date();
-
-    if (restSchedule[today.getDay()].notOpen) {
-        $(".schedule").text("Today is not open");
-    } else if (restSchedule[today.getDay()].start > today.getHours()) {
-        $(".schedule").text(
-            "Opens today at " + restSchedule[today.getDay()].start + ":00"
-        );
-    } else if (restSchedule[today.getDay()].close > today.getHours()) {
-        $(".schedule").text(
-            "OPEN TODAY UNTIL " + restSchedule[today.getDay()].close + ":00"
-        );
-    } else if (restSchedule[today.getDay()].close <= today.getHours()) {
-        $(".schedule").text(
-            "Closed at " + restSchedule[today.getDay()].close + ":00"
-        );
-    }
-    */
-    /************************************************************/
 
     // Add smooth scrolling to all links
     $("a").on("click", function (event) {
@@ -176,92 +117,90 @@ $(document).ready(function () {
     });
 
     // Fetch the form element
+    var dtToday = new Date();
 
-    // function getFormDataString(formEl) {
-    //     var formData = new FormData(formEl),
-    //         data = [];
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if (month < 10)
+        month = '0' + month.toString();
+    if (day < 10)
+        day = '0' + day.toString();
 
-    //     for (var keyValue of formData) {
-    //         data.push(
-    //             encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1])
-    //         );
-    //     }
+    var maxDate = year + '-' + month + '-' + day;
+    $('#date').attr('min', maxDate);
 
-    //     return data.join("&");
-    // }
 
-    // var formEmail = document.getElementById("reserve-form");
+    let telInput = $("#phone");
 
-    // // Override the submit event
-    // formEmail.addEventListener("submit", function (e) {
-    //     e.preventDefault();
+    // initialize
+    telInput.intlTelInput({
+        initialCountry: 'auto',
+        preferredCountries: ['us', 'gb', 'br', 'ru', 'cn', 'es', 'it'],
+        autoPlaceholder: 'aggressive',
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js",
+        geoIpLookup: function (callback) {
+            fetch('https://api.ipdata.co/?api-key=a86af3a7a4a375bfa71f9259b5404149d1eabb74adcc275e4faf9dfe', {
+                cache: 'reload'
+            }).then(response => {
+                if (response.ok) {
+                    return response.json()
+                }
+                throw new Error('Failed: ' + response.status)
+            }).then(ipjson => {
+                callback(ipjson.country_code)
+            }).catch(e => {
+                callback('us')
+            })
+        }
+    });
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('safari') != -1) {
+            document.getElementById('date').type = 'date';
+            document.getElementById('time').type = 'time';
+        } else {
+            if (ua.match(/iPad/i) || ua.match(/iPhone/i)) {
+                document.getElementById('time').type = 'time';
+            }
+            else {
+                console.log('safari');
+            }
+        }
+    }
 
-    //     let request = new XMLHttpRequest();
 
-    //     request.addEventListener("load", function () {
-    //         if (request.status === 302) {
-    //             // CloudCannon redirects on success
-    //         }
-    //     });
+    function getFormDataString(formEl) {
+        var formData = new FormData(formEl),
+            data = [];
 
-    //     // Validation of the reservation form
+        for (var keyValue of formData) {
+            data.push(
+                encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1])
+            );
+        }
 
-    //     let date = $("#date").val();
-    //     let month = date.split("/")[0];
-    //     let day = date.split("/")[1];
-    //     let time = $("#time").val();
+        return data.join("&");
+    }
 
-    //     let currentDate = new Date();
+    var formEmail = document.getElementById("reserve-form");
 
-    //     if (parseInt(month) > parseInt(currentDate.getMonth()) + 1) {
-    //         request.open(formEmail.method, formEmail.action);
-    //         request.setRequestHeader(
-    //             "Content-Type",
-    //             "application/x-www-form-urlencoded"
-    //         );
-    //         request.send(getFormDataString(formEmail));
-    //         $("footer .sms-form").text("Reservation made successfully");
-    //         $(" footer form").trigger("reset");
-    //         $("footer").animate({ scrollTop: 0 }, "slow");
-    //     } else if (
-    //         parseInt(month) == parseInt(currentDate.getMonth() + 1) &&
-    //         parseInt(day) >= parseInt(currentDate.getDate())
-    //     ) {
-    //         if (parseInt(day) > parseInt(currentDate.getDate())) {
-    //             request.open(formEmail.method, formEmail.action);
-    //             request.setRequestHeader(
-    //                 "Content-Type",
-    //                 "application/x-www-form-urlencoded"
-    //             );
-    //             request.send(getFormDataString(formEmail));
-    //             $("footer form ").trigger("reset");
-    //             $("footer").animate({ scrollTop: 0 }, "slow");
-    //             $("footer .sms-form").text("Reservation made successfully");
-    //         } else if (
-    //             parseInt(day) == parseInt(currentDate.getDate()) &&
-    //             parseInt(time.split(":")[0]) >= parseInt(currentDate.getHours()) + 2 &&
-    //             parseInt(time.split(":")[1]) >= parseInt(currentDate.getMinutes())
-    //         ) {
-    //             request.open(formEmail.method, formEmail.action);
-    //             request.setRequestHeader(
-    //                 "Content-Type",
-    //                 "application/x-www-form-urlencoded"
-    //             );
-    //             request.send(getFormDataString(formEmail));
-    //             $("footer form ").trigger("reset");
-    //             $("footer").animate({ scrollTop: 0 }, "slow");
-    //             $("footer .sms-form").text("Reservation made successfully");
-    //         } else {
-    //             $("footer .sms-form").text("*Pleas book two hours in advance");
-    //             $("footer").animate({ scrollTop: 0 }, "slow");
-    //         }
-    //     } else {
-    //         $("footer .sms-form").text(
-    //             "*You can not reserve a table in the past. Please change your reservation date."
-    //         );
-    //         $("footer").animate({ scrollTop: 0 }, "slow");
-    //     }
-    // });
+    // Override the submit event
+    formEmail.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let request = new XMLHttpRequest();
+
+        request.addEventListener("load", function () {
+            if (request.status === 302) {
+                // CloudCannon redirects on success
+            }
+        });
+        request.send(getFormDataString(formEmail));
+        $("footer .sms-form").text("Reservation made successfully");
+        $(" footer form").trigger("reset");
+        $("footer").animate({ scrollTop: 0 }, "slow");
+    });
     /*********************************************************/
 
     // slide in animation
@@ -412,52 +351,52 @@ $(document).ready(function () {
 });
 
 /* Fromating the date in the booking form  */
-var date = document.getElementById("date");
+// var date = document.getElementById("date");
 
-function checkValue(str, max) {
-    if (str.charAt(0) !== "0" || str == "00") {
-        var num = parseInt(str);
-        if (isNaN(num) || num <= 0 || num > max) num = 1;
-        str =
-            num > parseInt(max.toString().charAt(0)) && num.toString().length == 1
-                ? "0" + num
-                : num.toString();
-    }
-    return str;
-}
+// function checkValue(str, max) {
+//     if (str.charAt(0) !== "0" || str == "00") {
+//         var num = parseInt(str);
+//         if (isNaN(num) || num <= 0 || num > max) num = 1;
+//         str =
+//             num > parseInt(max.toString().charAt(0)) && num.toString().length == 1
+//                 ? "0" + num
+//                 : num.toString();
+//     }
+//     return str;
+// }
 
-date.addEventListener("input", function (e) {
-    this.type = "text";
-    var input = this.value;
-    if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
-    var values = input.split("/").map(function (v) {
-        return v.replace(/\D/g, "");
-    });
-    if (values[0]) values[0] = checkValue(values[0], 12);
-    if (values[1]) values[1] = checkValue(values[1], 31);
-    var output = values.map(function (v, i) {
-        return v.length == 2 && i < 1 ? v + " / " : v;
-    });
-    this.value = output.join("").substr(0, 14);
-});
+// date.addEventListener("input", function (e) {
+//     this.type = "text";
+//     var input = this.value;
+//     if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
+//     var values = input.split("/").map(function (v) {
+//         return v.replace(/\D/g, "");
+//     });
+//     if (values[0]) values[0] = checkValue(values[0], 12);
+//     if (values[1]) values[1] = checkValue(values[1], 31);
+//     var output = values.map(function (v, i) {
+//         return v.length == 2 && i < 1 ? v + " / " : v;
+//     });
+//     this.value = output.join("").substr(0, 14);
+// });
 
 /* to format the time input */
-var time = document.getElementById("time");
+// var time = document.getElementById("time");
 
-time.addEventListener("input", function (e) {
-    this.type = "text";
-    var input = this.value;
-    if (/\D\:$/.test(input)) input = input.substr(0, input.length - 3);
-    var values = input.split(":").map(function (v) {
-        return v.replace(/\D/g, "");
-    });
-    if (values[0]) values[0] = checkValue(values[0], 23);
-    if (values[1]) values[1] = checkValue(values[1], 60);
-    var output = values.map(function (v, i) {
-        return v.length == 2 && i < 1 ? v + " : " : v;
-    });
-    this.value = output.join("").substr(0, 14);
-});
+// time.addEventListener("input", function (e) {
+//     this.type = "text";
+//     var input = this.value;
+//     if (/\D\:$/.test(input)) input = input.substr(0, input.length - 3);
+//     var values = input.split(":").map(function (v) {
+//         return v.replace(/\D/g, "");
+//     });
+//     if (values[0]) values[0] = checkValue(values[0], 23);
+//     if (values[1]) values[1] = checkValue(values[1], 60);
+//     var output = values.map(function (v, i) {
+//         return v.length == 2 && i < 1 ? v + " : " : v;
+//     });
+//     this.value = output.join("").substr(0, 14);
+// });
 
 (function ($) {
     "use strict";
