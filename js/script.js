@@ -145,7 +145,7 @@ $(document).ready(function () {
             $(" footer form").trigger("reset"),
             $("footer").animate({ scrollTop: 0 }, "slow"),
             {
-                
+                cache: null
             }).then(response => {
                 if (response.ok) {
                     return response.json()
