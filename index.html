@@ -619,7 +619,6 @@
         </div>
         <input type="submit" class="btn text-white w-100 mt-5" value="RESERVE">
       </form>
-
       <a title="Reload" href="" class="logo-button"></a>
 
       <ul class="nav nav-pills scoial-net d-flex justify-content-center align-items-center">
@@ -681,7 +680,6 @@
       }
       return time.join('');
     }
-
     var data = JSON.parse($('#data').html());
 
     var today = new Date();
@@ -707,6 +705,7 @@
     else if (data.openingHoursSpecification[today.getDay()].closes.split(':')[0] <= today.getHours()) {
       $('.schedule').text('Open ' + weekday[today.getDay() + 1] + ' at ' + tConvert(data.openingHoursSpecification[today.getDay()].opens));
     }
+
   </script>
 </body>
 
