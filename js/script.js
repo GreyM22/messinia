@@ -111,9 +111,7 @@ $(document).ready(function () {
 
     /* resert the form on reload of the page  */
     window.addEventListener("beforeunload", function (event) {
-        $("#email-form").trigger("reset");
-
-        $(".booking .form-container form").trigger("reset");
+        $("footer .sms-form").text("Reservation made successfully"),
     });
 
     // Fetch the form element
