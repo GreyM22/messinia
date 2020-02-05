@@ -7,7 +7,7 @@ var rellax = new Rellax(".rellax", {
 /****************************************************************/
 $(document).ready(function () {
     //implementing the schedule
-
+/*
     var restSchedule = [
         {
             start: 13,
@@ -63,7 +63,7 @@ $(document).ready(function () {
             "Closed at " + restSchedule[today.getDay()].close + ":00"
         );
     }
-
+    */
     /************************************************************/
 
     // Add smooth scrolling to all links
