@@ -109,11 +109,6 @@ $(document).ready(function () {
 
     /************************************************************/
 
-    /* resert the form on reload of the page  */
-    window.addEventListener("beforeunload", function (event) {
-        $("footer .sms-form").text(" ");
-    });
-
     // Fetch the form element
     var dtToday = new Date();
 
@@ -139,11 +134,8 @@ $(document).ready(function () {
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js",
         geoIpLookup: function (callback) {
             fetch('https://api.ipdata.co/?api-key=a86af3a7a4a375bfa71f9259b5404149d1eabb74adcc275e4faf9dfe',
-            $("footer .sms-form").text("Reservation made successfully"),
-            $(" footer form").trigger("reset"),
-            $("footer").animate({ scrollTop: 0 }, "slow"),
             {
-                cache: true
+                cache: 'reload'
             }).then(response => {
                 if (response.ok) {
                     return response.json()
