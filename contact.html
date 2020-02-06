@@ -63,7 +63,7 @@
   <!-- main stylesheet file -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/contact.css">
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="data">
         {
             "@context": "http://schema.org",
             "@type": "Restaurant",
@@ -89,44 +89,51 @@
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Monday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": true
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Tuesday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": true
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Wednesday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": true
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Thursday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": true
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Friday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": true
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Saturday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": false
               },
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "http://schema.org/Sunday",
-                "opens": "13:00:00",
-                "closes": "23:00:00"
+                "opens": "13:00",
+                "closes": "23:00",
+                "is_open": false
               }
             ],
             "hasOfferCatalog": {
@@ -462,10 +469,10 @@
               <br> <br>
               Email: <a title="Email Us" href="mailto:hello@messiniarestaurant.com">hello@messiniarestaurant.com</a>
               <br> <br>
-              <b>Opening Hours:</b>
-              <br>
-              <b>Mon to Sun 1:00 pm to 11:00 pm</b>
-
+              
+              <div id="opening-times" class="">
+              </div>
+            
               <br> <br>
               There’s street parking between 9:00 am and 10:00 pm.
 
@@ -571,6 +578,60 @@
   <script src="js/rellax.min.js"></script>
   <!-- main js file -->
   <script src="js/script.js"></script>
+  <script>
+    function tConvert (time) {
+                time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+                if (time.length > 1) { 
+                    time = time.slice (1);  
+                    time[5] = +time[0] < 12 ? 'AM' : 'PM';
+                    time[0] = +time[0] % 12 || 12;
+                }
+                return time.join ('');
+            }
+
+            var data = JSON.parse($('#data').html());
+
+            var today = new Date();
+
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+    data.openingHoursSpecification.map(openingsItem => {
+      var dayOfWeek = openingsItem.dayOfWeek.split('/')[3];
+
+      var item = document.createElement('div');
+      item.setAttribute('class', 'item row no-gutter');
+
+      var dayHeading = document.createElement('h6');
+      dayHeading.setAttribute('class', 'col-6');
+      var day = document.createTextNode(dayOfWeek);
+      dayHeading.appendChild(day);
+
+      var hourHeading = document.createElement('h6');
+      hourHeading.setAttribute('class', 'col-6 text-right');
+
+      if (openingsItem.is_open) {
+        var openHours = document.createTextNode(tConvert(openingsItem.opens) + ' - ');
+        var closeHours = document.createTextNode(tConvert(openingsItem.closes));
+        hourHeading.appendChild(openHours);
+        hourHeading.appendChild(closeHours);
+      } else {
+        var closed = document.createTextNode('Closed');
+        hourHeading.appendChild(closed);
+      }
+
+      item.appendChild(dayHeading);
+      item.appendChild(hourHeading);
+
+      document.getElementById('opening-times').appendChild(item);
+    });
+  </script>
 </body>
 
 </html>
