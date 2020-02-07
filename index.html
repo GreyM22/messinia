@@ -49,6 +49,13 @@
     rel="stylesheet">
   <!-- bootstrap stylesheet file -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- libraries needed to pick the time -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
+      <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
+          type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.0/jquery.timepicker.min.css">  
   <!-- libraries needed to pick the time -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
@@ -58,6 +65,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.0/jquery.timepicker.min.css">
   <!-- for the loading spinner -->
   <link rel="stylesheet" href="css/animsition.min.css">
+  <!-- for the gallery view -->
+  <link rel="stylesheet" href="css/simplelightbox.css">
   <!-- main stylesheet file -->
   <link rel="stylesheet" href="css/style.css">
   <script id="data" type="application/ld+json">
@@ -350,7 +359,7 @@
 </head>
 
 <body>
-  <div class="m-0 p-0 animsition">
+  <div class="m-0 p-0 animsition" id="father">
     <header class=" w-100 min-vh-100 text-white position-relative">
       <div class="container">
         <nav class="navbar d-flex justify-content-between pt-3 pt-md-5 mx-lg-5">
@@ -563,27 +572,39 @@
       </h2>
 
       <div>
-        <div class="rellax" data-rellax-speed="0.8">
+        <div class="rellax" data-rellax-speed="0.8" id="gallery-container" >
           <div class="row  justify-content-end w-100 no-gutters position-relative ">
             <div class="col-4 d-flex align-items-end">
-              <img src="images/meat-dish.jpg" alt="A dish of meat" class="h-auto w-100">
+              <a href="images/meat-dish.jpg" title="Click to see the image!!!">
+                <img src="images/meat-dish.jpg" alt="A dish of meat" class="h-auto w-100">
+              </a>
             </div>
             <div class="col-3">
-              <img src="images/view-from-above.jpg" alt="A table from above!" class="h-auto w-100">
+              <a href="images/view-from-above.jpg" title="Click to see the image!!!">
+                <img src="images/view-from-above.jpg" alt="A table from above!" class="h-auto w-100">
+              </a>
             </div>
             <div class="col-4 d-flex align-items-end">
-              <img src="images/glass-of-wine.jpg" alt="Glasses of wine!" class="w-100 h-auto">
+              <a href="images/glass-of-wine.jpg" title="Click to see the image!!!">
+                <img src="images/glass-of-wine.jpg" alt="Glasses of wine!" class="w-100 h-auto">
+              </a>
             </div>
           </div>
           <div class="row  justify-content-start w-100 no-gutters mt-0 position-relative">
             <div class="col-3">
-              <img src="images/mint.jpg" alt="Mint" class="w-100 h-auto">
+              <a href="images/mint.jpg" title="Click to see the image!!!">
+                <img src="images/mint.jpg" alt="Mint" class="w-100 h-auto">
+              </a>
             </div>
             <div class="col-2">
-              <img src="images/chief.jpg" alt="Chief" class="w-100 h-auto">
+              <a href="images/chief.jpg" title="Click to see the image!!!">
+                <img src="images/chief.jpg" alt="Chief" class="w-100 h-auto">
+              </a>
             </div>
             <div class="col-3">
-              <img src="images/table-whith-out-people.jpg" alt="A table!" class="w-100 h-auto">
+              <a href="images/table-whith-out-people.jpg" title="Click to see the image!!!">
+                <img src="images/table-whith-out-people.jpg" alt="A table!" class="w-100 h-auto">
+              </a>
             </div>
           </div>
         </div>
@@ -662,9 +683,9 @@
     </footer>
   </div>
   <!-- jquery framework-->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -689,8 +710,14 @@
   <script src="js/animsition.min.js"></script>
   <!-- main js file -->
   <script src="js/script.js"></script>
+  <!-- for the gallery-->
+  <script src="js/simple-lightbox.js"></script>
   <!-- to show the opening hour-->
   <script>
+    $(function () {
+      var $gallery = $('#gallery-container a').simpleLightbox();
+    });
+
     function tConvert(time) {
       time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
       if (time.length > 1) {
