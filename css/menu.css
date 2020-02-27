@@ -114,3 +114,8 @@ header {
 .menu .btn-secondary:focus{
   box-shadow: none !important;
 }
+
+#carouselMenu{
+  position: relative;
+  z-index: 1050;
+}
