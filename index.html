@@ -574,9 +574,9 @@
       <div>
         <div class="rellax" data-rellax-speed="0.8" id="gallery-container" >
           <div class="row  justify-content-end w-100 no-gutters position-relative ">
-            <div class="col-4 d-flex align-items-end">
+            <div class="col-4 position-relative">
               <a href="images/meat-dish.jpg" title="Click to see the image!!!">
-                <img src="images/meat-dish.jpg" alt="A dish of meat" class="h-auto w-100">
+                <img src="images/meat-dish.jpg" alt="A dish of meat" class="img-left-socialfeed h-auto w-100 position-absolute">
               </a>
             </div>
             <div class="col-3">
@@ -584,9 +584,9 @@
                 <img src="images/view-from-above.jpg" alt="A table from above!" class="h-auto w-100">
               </a>
             </div>
-            <div class="col-4 d-flex align-items-end">
+            <div class="col-4 position-relative">
               <a href="images/glass-of-wine.jpg" title="Click to see the image!!!">
-                <img src="images/glass-of-wine.jpg" alt="Glasses of wine!" class="w-100 h-auto">
+                <img src="images/glass-of-wine.jpg" alt="Glasses of wine!" class="img-right-socialfeed w-100 h-auto position-absolute">
               </a>
             </div>
           </div>
@@ -712,6 +712,7 @@
   <script src="js/script.js"></script>
   <!-- for the gallery-->
   <script src="js/simple-lightbox.js"></script>
+
   <!-- to show the opening hour-->
   <script>
     $(function () {
@@ -752,6 +753,14 @@
     else if (data.openingHoursSpecification[today.getDay()].closes.split(':')[0] <= today.getHours()) {
       $('.schedule').text('Open ' + weekday[today.getDay() + 1] + ' at ' + tConvert(data.openingHoursSpecification[today.getDay()].opens));
     }
+  </script>
+  <script>
+    $(window).scroll(function(){
+      var sPos = $(this).scrollTop();
+      $('header').css({
+        'background-size': 100 + sPos + '%'
+      })
+    })
   </script>
 </body>
 

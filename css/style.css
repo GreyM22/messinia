@@ -74,9 +74,17 @@ header {
   background-image   : url("../images/header-view.jpg");
   background-repeat  : no-repeat;
   background-position: center center;
-  background-size    : 1440px 1079px;
+  background-size    : 100% 100%;
   z-index            : 20;
 }
+
+.section-bg-wrap{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
 
 .menu-icon {
   cursor : pointer;
@@ -895,6 +903,14 @@ input[type="number"] {
   animation-delay: -1s;
 }
 
+.img-left-socialfeed{
+  right: 0;
+  bottom: 0;
+}
+
+.img-right-socialfeed{
+  bottom: 0;
+}
 @keyframes sk-bounce {
 
   0%,

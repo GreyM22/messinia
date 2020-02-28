@@ -281,40 +281,40 @@ $(document).ready(function () {
     //parallax effect for the bg img
     var lastScroll = 0;
 
-    $(window).scroll(function () {
-        let x = $(this).scrollTop();
+    // $(window).scroll(function () {
+    //     let x = $(this).scrollTop();
 
-        let imageSize = $("header").css("background-size");
-        let imagePoz = $("header").css("background-position");
-        var imageHeight = imageSize.split(" ")[1];
-        let yPoz = imagePoz.slice(4);
+    //     let imageSize = $("header").css("background-size");
+    //     let imagePoz = $("header").css("background-position");
+    //     var imageHeight = imageSize.split(" ")[1];
+    //     let yPoz = imagePoz.slice(4);
 
-        if (imageHeight.slice(-1) == "%") {
-            imageHeight =
-                (parseFloat(imageHeight.slice(0, imageHeight.length - 2)) / 100) *
-                Math.max(
-                    document.documentElement.clientHeight,
-                    window.innerHeight || 0
-                );
-        } else {
-            imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2));
-        }
+    //     if (imageHeight.slice(-1) == "%") {
+    //         imageHeight =
+    //             (parseFloat(imageHeight.slice(0, imageHeight.length - 2)) / 100) *
+    //             Math.max(
+    //                 document.documentElement.clientHeight,
+    //                 window.innerHeight || 0
+    //             );
+    //     } else {
+    //         imageHeight = parseFloat(imageHeight.slice(0, imageHeight.length - 2));
+    //     }
 
-        let z = yPoz.indexOf("px");
+    //     let z = yPoz.indexOf("px");
 
-        if (yPoz.indexOf("px") !== -1) {
-        } else {
-            $("header").css(
-                "background-position",
-                "50%" +
-                parseInt(parseInt(x / 20) + imageHeight / 2 / 10) +
-                "%" +
-                ", 0% " +
-                parseInt(-x / 20) +
-                "px, center center"
-            );
-        }
-    });
+    //     if (yPoz.indexOf("px") !== -1) {
+    //     } else {
+    //         $("header").css(
+    //             "background-position",
+    //             "50%" +
+    //             parseInt(parseInt(x / 20) + imageHeight / 2 / 10) +
+    //             "%" +
+    //             ", 0% " +
+    //             parseInt(-x / 20) +
+    //             "px, center center"
+    //         );
+    //     }
+    // });
 });
 
 (function ($) {
