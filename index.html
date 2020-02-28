@@ -714,7 +714,7 @@
   <script src="js/simple-lightbox.js"></script>
 
   <!-- to show the opening hour-->
-  <script>
+  <script type="text/javascript">
     $(function () {
       var $gallery = $('#gallery-container a').simpleLightbox();
     });
@@ -754,7 +754,8 @@
       $('.schedule').text('Open ' + weekday[today.getDay() + 1] + ' at ' + tConvert(data.openingHoursSpecification[today.getDay()].opens));
     }
   </script>
-  <script>
+  <!-- the animation for the header -->
+  <script type="text/javascript">
     $(window).scroll(function(){
       var sPos = $(this).scrollTop();
       $('header').css({
