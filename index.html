@@ -49,13 +49,13 @@
     rel="stylesheet">
   <!-- bootstrap stylesheet file -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- libraries needed to pick the time -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
-      <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
-          type="text/css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.0/jquery.timepicker.min.css">  
+  <!-- libraries needed to pick the time -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
+    type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.13.0/jquery.timepicker.min.css">
   <!-- libraries needed to pick the time -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/css/intlTelInput.css">
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
@@ -572,11 +572,12 @@
       </h2>
 
       <div>
-        <div class="rellax" data-rellax-speed="0.8" id="gallery-container" >
+        <div class="rellax" data-rellax-speed="0.8" id="gallery-container">
           <div class="row  justify-content-end w-100 no-gutters position-relative ">
             <div class="col-4 position-relative">
               <a href="images/meat-dish.jpg" title="Click to see the image!!!">
-                <img src="images/meat-dish.jpg" alt="A dish of meat" class="img-left-socialfeed h-auto w-100 position-absolute">
+                <img src="images/meat-dish.jpg" alt="A dish of meat"
+                  class="img-left-socialfeed h-auto w-100 position-absolute">
               </a>
             </div>
             <div class="col-3">
@@ -586,7 +587,8 @@
             </div>
             <div class="col-4 position-relative">
               <a href="images/glass-of-wine.jpg" title="Click to see the image!!!">
-                <img src="images/glass-of-wine.jpg" alt="Glasses of wine!" class="img-right-socialfeed w-100 h-auto position-absolute">
+                <img src="images/glass-of-wine.jpg" alt="Glasses of wine!"
+                  class="img-right-socialfeed w-100 h-auto position-absolute">
               </a>
             </div>
           </div>
@@ -756,17 +758,30 @@
   </script>
   <!-- the animation for the header -->
   <script type="text/javascript">
-  console.log( " window heigth : "+ $(window).height())
-  var imgwidthPx = $(window).height() * 1.53;
-  var perc = (100 * imgwidthPx)/$(window).width();
-  $('header').css({
-    'background-size': perc +'%'
-  })
-    $(window).scroll(function(){
-      var sPos = $(this).scrollTop();
+    console.log(" window heigth : " + $(window).height())
+    var imgwidthPx = $(window).height() * 1.55;
+    var perc = (100 * imgwidthPx) / $(window).width();
+    var ratio = $(window).width() / $(window).height()
+    if (ratio > 1) {
       $('header').css({
-        'background-size': perc + (sPos/6) + '%'
+        'background-size': 100 + '%'
       })
+    } else {
+      $('header').css({
+        'background-size': perc + '%'
+      })
+    }
+    $(window).scroll(function () {
+      var sPos = $(this).scrollTop();
+      if (ratio < 1) {
+        $('header').css({
+          'background-size': perc + (sPos / 6) + '%'
+        })
+      } else {
+        $('header').css({
+          'background-size': 100 + (sPos / 6) + '%'
+        })
+      }
     })
   </script>
 </body>
