@@ -758,7 +758,7 @@
     $(window).scroll(function(){
       var sPos = $(this).scrollTop();
       $('header').css({
-        'background-size': 100 + sPos + '%'
+        'background-size': 100 + (sPos/6) + '%'
       })
     })
   </script>
