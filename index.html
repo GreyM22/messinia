@@ -4,7 +4,7 @@
  ) _ ((  O )/    / ) _)(  O ))   / )  (
 (____/ \__/ \_)__)(__)  \__/(__\_)(__\_)
 -->
-
+<!doctype html>
 <html>
 
 <head>
@@ -756,10 +756,16 @@
   </script>
   <!-- the animation for the header -->
   <script type="text/javascript">
+  console.log( " window heigth : "+ $(window).height())
+  var imgwidthPx = $(window).height() * 1.52;
+  var perc = (100 * imgwidthPx)/$(window).width();
+  $('header').css({
+    'background-size': perc +'%'
+  })
     $(window).scroll(function(){
       var sPos = $(this).scrollTop();
       $('header').css({
-        'background-size': 100 + (sPos/6) + '%'
+        'background-size': perc + (sPos/6) + '%'
       })
     })
   </script>

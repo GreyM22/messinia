@@ -952,15 +952,6 @@ input[type="number"] {
   }
 }
 
-/*****************************************************/
-
-@media only screen and (min-width: 1441px) {
-
-  /* header section */
-  header {
-    background-size: 100vw 74.93vw;
-  }
-}
 
 /*****************************************************/
 
