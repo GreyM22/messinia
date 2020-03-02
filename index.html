@@ -758,22 +758,41 @@
   </script>
   <!-- the animation for the header -->
   <script type="text/javascript">
-    console.log(" window heigth : " + $(window).height())
     var imgwidthPx = $(window).height() * 1.7;
     var perc = (100 * imgwidthPx) / $(window).width();
-    var ratio = $(window).width() / $(window).height()
-    if (ratio > 1) {
+    var ratio = $(window).width() / $(window).height();
+    console.log("On reload ration: "+ ratio);
+    if (ratio > 1.7) {
       $('header').css({
         'background-size': 100 + '%'
       })
     } else {
+      console.log("On reload perc: "+ perc);
       $('header').css({
         'background-size': perc + '%'
       })
     }
+    window.onresize = function (){
+      var imgwidthPx = $(window).height() * 1.7;
+      perc = (100 * imgwidthPx) / $(window).width();
+      ratio = $(window).width() / $(window).height();
+      console.log("On resize ration: "+ ratio);
+      console.log("On resize perc: "+ perc);
+        if (ratio > 1.7) {
+
+            $('header').css({
+                'background-size': 100 + '%'
+            })
+        } else {
+            $('header').css({
+                'background-size': perc + '%'
+            })
+        }
+    }
+
     $(window).scroll(function () {
       var sPos = $(this).scrollTop();
-      if (ratio < 1) {
+      if (ratio < 1.7) {
         $('header').css({
           'background-size': perc + (sPos / 6) + '%'
         })
