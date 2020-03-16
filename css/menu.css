@@ -1,6 +1,7 @@
 header {
   height             : 28.43vh;
   background-position: 50% -80px;
+  background-size: cover;
 }
 
 /* menu section */
